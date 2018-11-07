@@ -10,18 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_07_190955) do
+ActiveRecord::Schema.define(version: 2018_11_07_201107) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
   end
 
   create_table "levels", force: :cascade do |t|
     t.string "board_config"
-    t.integer "game_id"
+    t.bigint "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_levels_on_game_id"
@@ -29,8 +33,8 @@ ActiveRecord::Schema.define(version: 2018_11_07_190955) do
 
   create_table "play_sessions", force: :cascade do |t|
     t.string "status"
-    t.integer "user_id"
-    t.integer "level_id"
+    t.bigint "user_id"
+    t.bigint "level_id"
     t.integer "last_score"
     t.integer "best_score"
     t.datetime "created_at", null: false
@@ -54,4 +58,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_190955) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "levels", "games"
+  add_foreign_key "play_sessions", "levels"
+  add_foreign_key "play_sessions", "users"
 end
