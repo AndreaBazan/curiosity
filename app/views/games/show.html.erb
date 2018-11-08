@@ -1,5 +1,4 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
-
-<%= cl_image_tag("photo-1530328411047-7063dbd29029",
-      width: 400, height: 300, crop: :fill) %>
+<h1>GameLevel/ShowPage</h1>
+<% @game.levels.each do |level| %>
+  <%= link_to (@game.levels), play_game_level_path(@game, level) %>
+<% end %>

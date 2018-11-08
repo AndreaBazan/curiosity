@@ -1,12 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
+User.destroy_all
 Game.destroy_all
+
+puts 'Creating users'
+User.create!(
+  email: 'user@user.com',
+  password: 123456
+)
 
 puts 'Creating games...'
 games_attributes = [
@@ -16,32 +16,32 @@ games_attributes = [
   },
   {
     title:         'Sokoban',
-    photo:         'https://res-console.cloudinary.com/dsclisbti/thumbnails/v1/image/upload/v1541618821/cGhvdG8tMTUzMDMyODQxMTA0Ny03MDYzZGJkMjkwMjk=/grid',
+    photo:         'https://res.cloudinary.com/dsclisbti/image/upload/v1541619542/photo-1526572202046-8b87644dce4a.jpg',
   },
   {
     title:         'GalaXe',
-    photo:         'https://res-console.cloudinary.com/dsclisbti/thumbnails/v1/image/upload/v1541618845/cGhvdG8tMTUyMjMwODcxNTA0NC02MDNlYzZkMjZjZWQ=/grid',
-  },
-  {
-    title:         'Mi Casa',
-    photo:         'https://res-console.cloudinary.com/dsclisbti/thumbnails/v1/image/upload/v1541618907/aW1hZ2Vz/grid',
-  },
-  {
-    title:         'Globo',
-    photo:         'https://res-console.cloudinary.com/dsclisbti/thumbnails/v1/image/upload/v1541619256/cGhvdG8tMTUxODMzMTY0NzYxNC03YTFmMDRjZDM0Y2Y=/grid',
-  },
-  {
-    title:         'Dice',
-    photo:          'https://res-console.cloudinary.com/dsclisbti/thumbnails/v1/image/upload/v1541619453/cGhvdG8tMTUyNzYxMjgyMDY3Mi01YjU2MzUxZjczNDY=/grid',
+    photo:         'https://res.cloudinary.com/dsclisbti/image/upload/v1541618845/photo-1522308715044-603ec6d26ced.jpg',
   },
   {
     title:         'Robots',
-    photo:         'https://res-console.cloudinary.com/dsclisbti/thumbnails/v1/image/upload/v1541619453/cGhvdG8tMTUyNzYxMjgyMDY3Mi01YjU2MzUxZjczNDY=/grid',
+    photo:         'https://res.cloudinary.com/dsclisbti/image/upload/v1541619256/photo-1518331647614-7a1f04cd34cf.jpg',
+  },
+  {
+    title:         'Globo',
+    photo:         'https://res.cloudinary.com/dsclisbti/image/upload/v1541619417/photo-1529978755210-7f13333beb13.jpg',
   },
   {
     title:         'Extreme Challenge',
-    photo:         'https://res-console.cloudinary.com/dsclisbti/thumbnails/v1/image/upload/v1541619542/cGhvdG8tMTUyNjU3MjIwMjA0Ni04Yjg3NjQ0ZGNlNGE=/grid',
+    photo:         'https://res.cloudinary.com/dsclisbti/image/upload/v1541619542/photo-1526572202046-8b87644dce4a.jpg',
   }
 ]
 Game.create!(games_attributes)
+
+Game.all.each do |game|
+  5.times do
+    level = Level.new()
+    game.levels << level
+  end
+end
+
 puts 'Finished!'
