@@ -1,14 +1,5 @@
 <h1>UserDashboard</h1>
-
-<%= cl_image_tag("https://res.cloudinary.com/dsclisbti/image/upload/v1541618845/photo-1522308715044-603ec6d26ced.jpg",
-      width: 400, height: 300, crop: :fill) %>
-
-
 <% @games.each do |game| %>
-<%= link_to "Games", games_show_path(game) %>
-<!-- <a href="">
-  <div>
-
-  </div>
-</a> -->
+  <%= link_to cl_image_tag(game.photo,
+      width: 400, height: 300, crop: :fill), game_path(game) %>
 <% end %>
