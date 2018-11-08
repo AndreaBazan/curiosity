@@ -1,0 +1,2 @@
+update-alternatives --display java
+-Dprism.verbose=true
