@@ -1,0 +1,28 @@
+footer {
+  padding: 45px 0px;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Julius Sans One', sans-serif;
+  background: #F4F4F4;
+  align-items: center;
+  height: 100px;
+  color: black;
+  position:relative;
+}
+
+
+.footer .fa-heart {
+  color: black;
+}
+
+
+html, body {
+  height:100%;
+}
+
+.content {
+  min-height:100%;
+  overflow: auto;
+}
