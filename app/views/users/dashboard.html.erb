@@ -1,5 +1,5 @@
 <h1>UserDashboard</h1>
 <% @games.each do |game| %>
   <%= link_to image_tag(game.photo,
-      width: 400, height: 300, crop: :fill), game_path(game) %>
+      width: 400, height: 300), game_path(game) %>
 <% end %>
