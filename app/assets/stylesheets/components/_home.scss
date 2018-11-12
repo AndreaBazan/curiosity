@@ -1,0 +1,14 @@
+.pic-container{
+  text-align: right;
+  background-image: asset-url("banner.png");
+  width: 100%;
+  opacity: 1;
+  height: 40vh;
+  background-repeat: no-repeat;
+  background-position: center top;
+  -webkit-background-size: cover;
+}
+
+.content{
+  min-height: 0;
+}
