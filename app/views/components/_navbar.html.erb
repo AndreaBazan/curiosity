@@ -13,7 +13,7 @@
       <%# <%= link_to "List a dress", new_dress_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%# <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%# <%= render 'shared/search' %>
-      <%= link_to t(".sign_out", default: "Log out"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete %> 
+      <%= link_to t(".sign_out", default: "Cierra sesión"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete %> 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
@@ -34,8 +34,8 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Inicia sesión"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_up", default: "Crea una cuenta"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
