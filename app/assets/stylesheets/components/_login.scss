@@ -1,0 +1,53 @@
+.login-container{
+  font-family: 'Montserrat', sans-serif !important;
+  color: gray;
+  font-size: 18px;
+  max-width: 500px;
+  margin: auto;
+  label {
+    font-weight: 100;
+  }
+  h2{
+    font-size: 25px;
+    font-weight: 700;
+    font-family: $body-font;
+    color: $blue;
+    margin: 40px;
+  }
+}
+
+.field input[type='text'],
+.field input[type='email'],
+.field input[type='password']{
+  width: 60%;
+  height: 30px;
+  border-radius: 5px; 
+  border: 1px solid #ccc;
+}
+
+.field{
+  line-height: 18px;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+
+  &-right{
+    justify-content: flex-end;
+  }
+}
+
+.actions input[type="submit"]{
+  background-color: $orange;
+  color:white;
+  border: none;
+  padding: .4em 2.5em;
+  border-radius: 5px;
+}
+
+.actions{
+  margin-bottom: 1em; 
+}
+
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-primary:focus, .btn-primary:active:focus {
+  background-color: #8064A2;}
