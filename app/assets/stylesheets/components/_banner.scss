@@ -1,23 +1,34 @@
 .banner {
-  height:80vh;
   display:flex;
   justify-content:space-around;
   align-items:flex-start;
-  background: #4AABB9;
+  background: #08233E;
   background-size:cover;
-  position:absolute;
-  left:0;
-  right:0;
-}
+  color:white;
+  text-align: center;
+  font-size: 14px;
+  h4{
+    font-family: $body-font;
+    // letter-spacing: 0.05em;
+    font-weight: 700;
+  }
 
+  h6{
+    margin-top: 0;
+    color: gray;
+    font-family: $headers-font;
+  }
+}
 
 .letter{
   display: inline-block;
+  font-family: $headers-font;
   font-weight: 900;
   font-size: 8em;
-  margin: 0.2em;
+  margin: 0.4em 0.2em 0.1em;
+  line-height: 1;
   position: relative;
-  color: #08233E;
+  color: #4AABB9;
   transform-style: preserve-3d;
   perspective: 400;
   z-index: 1;
@@ -78,4 +89,60 @@
   position: absolute;
   top: 50%;
   width: 100%;
+}
+
+.btn-4{
+  position: relative;
+  z-index: 1;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  margin: auto;
+  margin-top: 60px;
+  display: block;
+  color: white;
+  background: #f04903;
+  border-radius: 50%;
+  border: none;
+  transition: box-shadow 400ms cubic-bezier(.2,0,.7,1), transform 200ms cubic-bezier(.2,0,.7,1);
+
+}
+.btn-4:after{
+  font-size: 2.5em;
+  line-height: 1.1em;
+}
+.btn_4:hover{
+    transform: rotate(180deg);
+    box-shadow: 0 0 1px 15px rgba(138, 59, 88, 0.4), 0 0 1px 30px rgba(138, 59, 88, 0.1), 0 0 1px 45px rgba(138, 59, 88, 0.1);
+  }
+
+.play {
+  font-size: 30px;
+  position: relative;
+  
+  color: white;
+}
+
+.icons{
+ display: flex;
+ justify-content: space-between;
+ font-size: 6em;
+ margin: 0.5em 0;
+
+ .icon-one{
+   color: #f04903;
+ }
+
+ .icon-two{
+  color: #4AABB9;
+}
+
+.icon-three{
+  color: #fec606;
+}
+
+.icon{
+  width: 200px;
+}
+
 }
