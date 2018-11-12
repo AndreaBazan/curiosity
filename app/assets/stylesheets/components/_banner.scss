@@ -33,6 +33,7 @@
   perspective: 400;
   z-index: 1;
 }
+
 .letter:before, .letter:after{
   position:absolute;
   content: attr(data-letter);
@@ -40,19 +41,22 @@
   top:0;
   left:0;
 }
+
 .letter, .letter:before, .letter:after{
   transition: all 0.3s ease-in-out;
 }
+
 .letter:before{
   color: rgba(240,240,240,1);
   text-shadow:
-    -1px 0px 1px rgba(255,255,255,.8),
+    -1px 0px 1px rgba(255, 255, 255, 0.89),
     1px 0px 1px rgba(0,0,0,.8);
   z-index: 3;
   transform:
     rotateX(0deg)
     rotateY(-15deg)
-    rotateZ(0deg);
+    rotateZ
+    (0deg);
 }
 .letter:after{
   color: rgba(0,0,0,.11);
@@ -64,6 +68,7 @@
     rotateZ(0deg)
     skew(0deg,1deg);
 }
+
 .letter:hover:before{
   color: #fafafa;
   transform:
@@ -80,16 +85,16 @@
     skew(0deg,22deg);
 }
 
-.container {
-  text-align: center;
-  left: 0;
-  line-height: 100px;
-  margin: auto;
-  margin-top: -100px;
-  position: absolute;
-  top: 50%;
-  width: 100%;
-}
+// .container {
+//   text-align: center;
+//   left: 0;
+//   line-height: 100px;
+//   margin: auto;
+//   margin-top: -100px;
+//   position: absolute;
+//   top: 50%;
+//   width: 100%;
+// }
 
 .btn-4{
   position: relative;
@@ -127,7 +132,7 @@
  display: flex;
  justify-content: space-between;
  font-size: 6em;
- margin: 0.5em 0;
+ margin: 0.3em 0;
 
  .icon-one{
    color: #f04903;
