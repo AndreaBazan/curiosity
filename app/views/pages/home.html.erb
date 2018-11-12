@@ -1,13 +1,10 @@
 <html>
-  <link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <body>
     <div class="container">
       <div class="row">
         <div class="col-sm-12" style="width: 1440px;">
-          <h1> HOLA CURIOSO!!</h1>
-          <%= link_to 'Login', new_user_session_path, class: "btn btn-primary", role: "button" %>
-          <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-warning", role: "button" %>
+          <%= render 'components/banner' %>
         </div>
       </div>
     </div>
