@@ -1,19 +1,41 @@
-<div class="card-container">
-  <div class="card-row">
-    <% @games.each do |game, item| %>
-     <div class="col-xs-12 col-sm-4">
-        <div class='card'>
-          <div class="card-content">
-            <h3 class="card-title"><%= game.title %></h3>
-              <div class="card-play">
-              <a href="" class="btn-4"><i class="fa fa-play play"></i></a>
-             </div>
-          </div>
-          <%= link_to image_tag(game.photo,
-            width: 300, height: 200, :class => "some_class"), game_path(game) %>
-        </div>
-      </div>
-    <% end %>
+
+<div class="row">
+  <div class="col-sm-12 user-greeting">
+    <h2 class="text-center ">Hola <%= User.name %>!</h2>
+    <h5 class="text-center">Listo para curiosear?</h5>
   </div>
 </div>
+  <div class="row">
+    <section class=" col-sm-12">
+      <h3 class="text-center user-prices">Tus Premios</h3>
+    </section>
+  </div>
+<div class="row">
+  <section class=" col-sm-7">
+    <h3 class="text-center">Juegos</h3>
+    <div class="card-container ">
+      <div class="row">
+        <% @games.each do |game| %>
+          <div class="col-sm-6 col-md-4 ">
+            <div class='card' style= 'background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(<%=game.photo%>);background-repeat: no-repeat;' >
+              <div class="card-description">
+                <h3 class="card-title"><%= game.title %></h3>
+                <div class="card-play">
+                 <%= link_to game_path(game), :class=>"card-btn" do%>
+                 <i class="fa fa-play btn-play"></i>
+                 <% end %>
+                </div>
+             </div>
+           </div>
+        </div>
+     <% end %>
+     </div>
+    </div>
+  </section>
+  <section class="col-sm-5">
+    <h3 class="text-center">Progreso</h3>
+  </section>
+</div>
+
+
 
