@@ -6,7 +6,7 @@
 
 
   <div class="field">
-      <%= f.label :nombre %><br />
+      <%= f.label :name, 'Nombre' %><br />
       <%= f.text_field :name, autofocus: true, autocomplete: "Name" %>
     </div>
 
@@ -16,7 +16,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :contraseña %>
+      <%= f.label :password, 'Contraseña' %>
       <% if @minimum_password_length %>
       <small><em>(min <%= @minimum_password_length %> caracteres)</em></small>
       <% end %><br />
@@ -24,7 +24,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :confirma_tu_contraseña %><br />
+      <%= f.label :password_confirmation, 'Confirma tu contraseña' %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
 
