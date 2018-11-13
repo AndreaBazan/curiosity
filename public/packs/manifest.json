@@ -1,4 +1,6 @@
 {
-  "application.js": "/packs/application-8ed494e6ceb66b29d5e0.js",
-  "application.js.map": "/packs/application-8ed494e6ceb66b29d5e0.js.map"
+  "application.js": "/packs/application-e05e5547da54c81f9944.js",
+  "application.js.map": "/packs/application-e05e5547da54c81f9944.js.map",
+  "game.js": "/packs/game-df5c8b7e721b49c77415.js",
+  "game.js.map": "/packs/game-df5c8b7e721b49c77415.js.map"
 }
