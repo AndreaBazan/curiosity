@@ -1,0 +1,45 @@
+/* Your board style here */
+
+.game-box {
+  position: relative;
+  margin: 50px;
+}
+
+.robot-piece {
+  background-image: asset-url("logo.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  left: 0;
+  transition: all ease 1s;
+}
+
+.robot {
+  background-color: red;
+}
+
+.racer_table td {
+  background-color: transparent;
+  height: 100px;
+  width: 100px;
+  border: 1px solid lightgrey;
+}
+.racer_table td.active {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+td.hole {
+  background-image: asset-url("hole.png");
+  background-size:100%;
+  background-repeat:no-repeat;
+}
+
+td.wall {
+  background-image: asset-url("wall.png");
+  background-size:100%;
+  background-repeat:no-repeat;
+}

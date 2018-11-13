@@ -1,2 +1,107 @@
-<h1>Levels#play</h1>
-<p>Find me in app/views/levels/play.html.erb</p>
+<h1 class="text-center">Wagon Race</h1>
+<hr>
+
+<div class="game-box">
+  <div class="robot-piece"></div>
+  <table class="racer_table">
+    <% @board.each do |row| %>
+      <tr>
+        <% row.each do |square| %>
+          <td class='<%= square %>'></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<!-- <table class="racer_table">
+  <tr id="player1_race">
+    <td class="active"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr >
+    <td ></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="robot"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr >
+    <td ></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr >
+    <td ></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr >
+    <td ></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+ --><hr>
+<div class="left">
+  <button id="left" data-input="left-input" class="race-btns">left</button>
+  <input type="number" id="left-input" value="1">
+</div>
+<div class="right">
+  <button id="right" data-input="right-input" class="race-btns">right</button>
+  <input type="number" id="right-input" value="1">
+</div>
+<div class="up">
+  <button id="up" data-input="up-input" class="race-btns">up</button>
+  <input type="number" id="up-input" value="1">
+</div>
+<div class="down">
+  <button id="down" data-input="down-input" class="race-btns">down</button>
+  <input type="number" id="down-input" value="1">
+</div>
+
+<%= javascript_pack_tag 'game' %>
