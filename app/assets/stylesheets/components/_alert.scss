@@ -1,11 +1,13 @@
 .alert {
   margin: 0;
   text-align: center;
-  color: white;
+  font-size: 10px;
+  // color: white;
 }
-.alert-info {
-  background: $green;
-}
+// .alert-info {
+//   background: $light-blue;
+// }
 .alert-warning {
   background: $red;
+  color:white;
 }

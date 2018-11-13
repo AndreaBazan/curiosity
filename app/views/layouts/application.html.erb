@@ -6,17 +6,16 @@
     <title>Curiosity</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
 <body>
    <navbar> <%= render 'components/navbar' %> </navbar>
     <%= render 'components/flashes' %>
     <div class="content">
-
       <%= yield %>
     </div>
     <footer><%= render 'components/footer' %></footer>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
