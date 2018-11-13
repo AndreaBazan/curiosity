@@ -37,10 +37,10 @@ games_attributes = [
 ]
 Game.create!(games_attributes)
 
+puts 'Creating levels...'
 Game.all.each do |game|
   5.times do
-    level = Level.new()
-    game.levels << level
+    Level.create!(game: game)
   end
 end
 
