@@ -1,19 +1,30 @@
 <div class="card-container">
   <div class="card-row">
-    <% @games.each do |game, item| %>
-     <div class="col-xs-12 col-sm-4">
-        <div class='card'>
-          <div class="card-content">
-            <h3 class="card-title"><%= game.title %></h3>
-              <div class="card-play">
-              <a href="" class="btn-4"><i class="fa fa-play play"></i></a>
-             </div>
-          </div>
-          <%= link_to image_tag(game.photo,
-            width: 300, height: 200, :class => "some_class"), game_path(game) %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+    <% @games.each do |game| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class='card'>
+        <div class="card-description">
+          <h3 class="card-title"><%= game.title %></h3>
+          <div class="card-play">
+           <%= link_to game_path(game), :class=>"card-btn" do%>
+           <i class="fa fa-play btn-play"></i>
+           <% end %>
+         </div>
+       </div>
+     </div>
+   </div>
+  <% end %>
+ </div>
 </div>
 
+
+  <div class="col-xs-12 col-sm-4">
+      <div class="card-1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+        <div class="card-description">
+          <h3>Game Name</h3>
+          <div class="card-play">
+            <a href="" class="btn-4"><i class="fa fa-play play"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
