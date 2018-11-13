@@ -1,7 +1,13 @@
 .signup-container{
   font-family: 'Montserrat', sans-serif !important;
   color: gray;
-  font-size: 17px;
+  font-size: 12px;
+  @media (min-width: '460px') {
+    font-size: 14px;
+  }
+  @media (min-width: '860px') {
+    font-size: 17px;
+  }
   max-width: 700px;
   margin: auto;
   label {
