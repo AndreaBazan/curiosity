@@ -1,13 +1,9 @@
-.card-container{
-  height: 80vh;
-  width:60vw;
-}
+
 
 /*my part*/
 
 .card {
   height: 175px;
-  width:80%;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
@@ -65,12 +61,12 @@
   border-radius: 50%;
   box-sizing: border-box;
   border: none;
-  transition: box-shadow 400ms cubic-bezier(.2,0,.7,1), transform 200ms cubic-bezier(.2,0,.7,1);
+  transition: box-shadow 800ms cubic-bezier(.2,0,.7,1), transform 600ms cubic-bezier(.2,0,.7,1);
   transform-origin: center;
 }
 
 .card-btn:hover{
-  transform: rotate(180deg);
+  transform: rotate(360deg);
   box-shadow: 0 0 1px 15px rgba(138, 59, 88, 0.4), 0 0 1px 30px rgba(138, 59, 88, 0.1), 0 0 1px 45px rgba(138, 59, 88, 0.1);
 }
 
