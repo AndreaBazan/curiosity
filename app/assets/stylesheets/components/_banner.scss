@@ -24,7 +24,6 @@
   display: inline-block;
   font-family: $headers-font;
   font-weight: 900;
-  font-size: 8em;
   margin: 0.4em 0.2em 0.1em;
   line-height: 1;
   position: relative;
@@ -32,7 +31,16 @@
   transform-style: preserve-3d;
   perspective: 400;
   z-index: 1;
+  font-size: 2.5em;
+  @media (min-width: '460px') {
+    font-size: 4em;
+  }
+  @media (min-width: '860px') {
+    font-size: 8em;
+  }
 }
+
+
 
 .letter:before, .letter:after{
   position:absolute;
@@ -131,8 +139,26 @@
 .icons{
  display: flex;
  justify-content: space-between;
- font-size: 6em;
+ font-size: 2em;
  margin: 0.3em 0;
+ 
+ h5 {
+   font-size: 10px;
+ }
+
+ 
+ @media (min-width: '460px') {
+   font-size: 4em;
+    h5 {
+      font-size: 14px;
+    }
+  } 
+  @media (min-width: '860px') {
+    font-size: 6em;
+    h5 {
+      font-size: 18px;
+    }
+  }  
 
  .icon-one{
    color: #f04903;
@@ -147,7 +173,7 @@
 }
 
 .icon{
-  width: 200px;
+  width: 33.3%;
 }
 
 .level-game-name {
