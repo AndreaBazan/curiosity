@@ -9,11 +9,11 @@
 
     <% if user_signed_in? %>
       <!-- Links when logged in -->
-      <%# <%= link_to "Profile", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Perfil", user_root_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%# <%= link_to "List a dress", new_dress_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%# <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%# <%= render 'shared/search' %>
-      <%= link_to t(".sign_out", default: "Cierra sesión"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete %> 
+      <%= link_to t(".sign_out", default: "Cierra sesión"), destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">

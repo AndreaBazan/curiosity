@@ -124,7 +124,7 @@
 .play {
   font-size: 30px;
   position: relative;
-  
+
   color: white;
 }
 
@@ -150,4 +150,11 @@
   width: 200px;
 }
 
+.level-game-name {
+  width: 1265px;
+  height: 95px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  }
 }

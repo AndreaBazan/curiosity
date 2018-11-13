@@ -1,4 +1,25 @@
-<h1>GameLevel/ShowPage</h1>
-<% @game.levels.each do |level| %>
-  <%= link_to (@game.levels), play_game_level_path(@game, level) %>
-<% end %>
+<section>
+<div class="level-container">
+<div class="level-game-name">
+  <h3><%= @game.title %></h3>
+</div>
+<div class="card-container-level">
+   <div class="row">
+     <% @game.levels.each_with_index do |level, index| %>
+      <% index += 1 %>
+      <div class="col-sm-6 col-md-4">
+        <div class='card game-card' style = 'background-image: url(http://placehold.it/600x450/041A35/FFFFFF?text=<%= index %>); background-repeat: no-repeat;' >
+          <div class="card-description">
+            <div class="card-play">
+              <%= link_to play_game_level_path(@game, level), :class=>"card-btn" do%>
+                <i class="fa fa-play btn-play"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+ </div>
+</div>
+</section>
