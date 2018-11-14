@@ -2,12 +2,18 @@
 <hr>
 
 <div class="game-box">
-  <div class="robot-piece"></div>
-  <table class="racer_table">
+
+  <table class="robot-board">
     <% @board.each do |row| %>
       <tr>
         <% row.each do |square| %>
-          <td class='<%= square %>'></td>
+          <td class='<%= square %>'>
+            <% if square == :robot %>
+              <div class="robot-piece">
+                <%= render 'components/curioso' %>
+              </div>
+            <% end %>
+          </td>
         <% end %>
       </tr>
     <% end %>
