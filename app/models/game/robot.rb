@@ -1,5 +1,3 @@
-require 'pry-byebug'
-
 # Models the Robor behavior for the game
 class Robot
   FACINGS = [:south, :east, :north, :west]
