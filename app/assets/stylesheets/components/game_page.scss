@@ -1,0 +1,27 @@
+.level-container{
+  color: $blue;
+  h1{
+    padding: 0.5em;
+  }
+  h2, h3, h4{
+    color: $blue;
+    font-family: $body-font;
+    text-transform: uppercase;
+  }
+  h5{
+    color: dimgray;
+  }
+  p{
+    color: dimgray;
+    font-size: 14px;
+  }
+
+  ul{
+    color: dimgray;
+    font-size: 14px;
+  }
+}
+
+.overview{
+  margin-bottom: 2em;
+}
