@@ -1,0 +1,109 @@
+$head-position: 0%;
+$head-movement: 2%;
+
+$body-position: 35%;
+$body-movement: 1%;
+
+$wheels-position: 73%;
+$wheels-movement: -1%;
+
+$arm-position: 24%;
+$arm-movement: -2%;
+
+
+.curi {
+  height: 100%;
+  width: 80%;
+  position: relative;
+}
+
+.robot-piece {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  transition: all ease 1s;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes head-idle {
+  0% { top: $head-position; }
+  50% { top: $head-position + $head-movement; }
+  100% { top: $head-position; }
+}
+@keyframes body-idle {
+  0% { top: $body-position; }
+  50% { top: $body-position + $body-movement; }
+  100% { top: $body-position; }
+}
+@keyframes wheels-idle {
+  0% { top: $wheels-position; }
+  50% { top: $wheels-position + $wheels-movement; }
+  100% { top: $wheels-position; }
+}
+@keyframes arm-idle {
+  0% { top: $arm-position; }
+  50% { top: $arm-position + $arm-movement; }
+  100% { top: $arm-position; }
+}
+
+
+.curi > * {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.curi-head {
+  background-image: asset-url('head.png');
+  animation-name: head-idle;
+  animation-duration: 1s;
+  top: $head-position;
+}
+
+.curi-body {
+  background-image: asset-url('body.png');
+  animation-name: body-idle;
+  animation-duration: 0.75s;
+  top: $body-position;
+}
+
+.curi-wheels {
+  background-image: asset-url('wheels.png');
+  animation-name: wheels-idle;
+  animation-duration: 0.5s;
+  top: $wheels-position;
+}
+
+.curi-left-arm {
+  background-image: asset-url('arm.png');
+  animation-name: arm-idle;
+  animation-duration: 0.5s;
+  top: $arm-position;
+  transform: rotateY(0deg) rotateX(180deg) translateY(47%);
+}
+
+.curi-right-arm {
+  background-image: asset-url('arm.png');
+  animation-name: arm-idle;
+  animation-duration: 0.5s;
+  top: $arm-position;
+  transform: rotateY(180deg) rotateX(180deg) translateY(47%);
+}
+
+.curi-left-arm.up {
+  transform: rotateY(0deg) rotateX(0deg) translateY(-3%);
+}
+
+.curi-right-arm.up {
+  transform: rotateY(180deg) rotateX(0deg) translateY(-3%);
+}
