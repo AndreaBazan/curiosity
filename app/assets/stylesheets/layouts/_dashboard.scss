@@ -1,5 +1,6 @@
 .user-greeting {
   height: 15vh;
+  color: $blue;
   h2{
     font-size: 28px;
   }
@@ -11,7 +12,7 @@
    } 
    @media (min-width: '860px') {
      h2 {
-       font-size: 38px;
+       font-size: 42px;
      }
    }
    h5{
@@ -32,6 +33,7 @@
 
 
 .user-prices {
+  color: $blue;
   height:20vh;
   h3{
     font-size: 26px;
@@ -50,6 +52,7 @@
 }
 
 .user-games{
+  color: $blue;
   align-items: center;
   h3{
     font-size: 26px;
@@ -68,6 +71,7 @@
 }
 
 .user-progress{
+  color: $blue;
   h3{
     font-size: 26px;
   }
