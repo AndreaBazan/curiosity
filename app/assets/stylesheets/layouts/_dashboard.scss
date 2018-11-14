@@ -1,8 +1,86 @@
 .user-greeting {
   height: 15vh;
+  h2{
+    font-size: 28px;
+  }
+  
+  @media (min-width: '460px') {
+     h2 {
+       font-size: 32px;
+     }
+   } 
+   @media (min-width: '860px') {
+     h2 {
+       font-size: 38px;
+     }
+   }
+   h5{
+     font-size: 14px;
+   }
+   
+   @media (min-width: '460px') {
+      h5 {
+        font-size: 16px;
+      }
+    }
+    @media (min-width: '860px') {
+      h5 {
+        font-size: 18px;
+      }
+    }
 }
 
 
 .user-prices {
   height:20vh;
+  h3{
+    font-size: 26px;
+  }
+  
+  @media (min-width: '460px') {
+     h3 {
+       font-size: 28px;
+     }
+   }
+   @media (min-width: '860px') {
+     h3 {
+       font-size: 31px;
+     }
+   }
 }
+
+.user-games{
+  align-items: center;
+  h3{
+    font-size: 26px;
+  }
+  
+  @media (min-width: '460px') {
+     h3 {
+       font-size: 28px;
+     }
+   }
+   @media (min-width: '860px') {
+     h3 {
+       font-size: 31px;
+     }
+   }
+}
+
+.user-progress{
+  h3{
+    font-size: 26px;
+  }
+  
+  @media (min-width: '460px') {
+     h3 {
+       font-size: 28px;
+     }
+   }
+   @media (min-width: '860px') {
+     h3 {
+       font-size: 31px;
+     }
+   }
+}
+
