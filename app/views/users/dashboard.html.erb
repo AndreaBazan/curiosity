@@ -1,8 +1,11 @@
 
 <div class="row">
   <div class="col-sm-12 user-greeting">
-    <h2 class="text-center ">Hola <%= current_user.name %>!</h2>
+    <div class="welcome-banner">
+      <h2 class="slide-text">Hola <%= current_user.name %>!</h2>
+      <%= render 'components/cabeza-curioso' %>
     <h5 class="text-center">Estamos listos para curiosear?</h5>
+    </div>
   </div>
 </div>
   <div class="row">
