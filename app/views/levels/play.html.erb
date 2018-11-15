@@ -67,7 +67,7 @@
   <ul class="list-unstyled" id="queue-interface"></ul>
 </section>
 
-<%= form_for [@level, @play_session] do |form| %>
+<%= form_for [@level, @play_session], remote: true do |form| %>
   <%= form.hidden_field :actions %>
 <% end %>
 

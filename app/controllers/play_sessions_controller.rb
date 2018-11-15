@@ -1,14 +1,10 @@
 class PlaySessionsController < ApplicationController
-  def new
-    @game = Game.new
-  end
-
   def create
-    @level = Level.find(params[:level_id])
+    level = Level.find(params[:level_id])
     actions = parse_actions
-    board = Board.new(squares: @level.board)
-    robot = Robot.new(board: board)
-    robot.execute(actions)
+    board = Board.new(squares: level.board)
+    @robot = Robot.new(board: board)
+    @robot.execute(actions)
   end
 
   private
