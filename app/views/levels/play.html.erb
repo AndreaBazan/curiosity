@@ -2,7 +2,6 @@
 <hr>
 
 <section class="game-box">
-
   <table class="robot-board">
     <% @board.each do |row| %>
       <tr>
@@ -87,10 +86,15 @@
     </div>
 
     <div>
-          <button class="play-moves"> <i class="fa fa-play btn-submit"></i></button>
+      <button class="play-moves"> <i class="fa fa-play btn-submit"></i></button>
     </div>
-
-
   </div>
 </section>
-<%= javascript_pack_tag 'game' %>
+
+<section>
+  <ul class="list-unstyled" id="queue-interface"></ul>
+</section>
+
+<% content_for :js_pack do %>
+  <%= javascript_pack_tag 'game' %>
+<% end %>

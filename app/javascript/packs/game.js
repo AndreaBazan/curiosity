@@ -105,15 +105,6 @@ function moveTile(direction) {
 
 let playerMoves = [];
 
-function queueMove () {
-   const inputID = this.getAttribute('data-input');
-  const times = document.getElementById(inputID).value;
-  const direction = this.id;
-
-}
-
-//function printMoves() {};
-
 function moveToDirection() {
   const inputID = this.getAttribute('data-input');
   const times = document.getElementById(inputID).value;
@@ -122,8 +113,21 @@ function moveToDirection() {
   multipleMoves(direction, times);
 }
 
+const queueInterfaceElement = (type, executions) => `
+  <li data-type="${type}" data-executions="${executions}">${type} ${executions}</li>
+`
+
+function addMovesToQueueInterface() {
+  const inputID = this.getAttribute('data-input');
+  const times = document.getElementById(inputID).value;
+  const direction = this.id;
+
+  const queueInterface = document.querySelector('#queue-interface');
+  queueInterface.insertAdjacentHTML('beforeend', queueInterfaceElement(direction, times))
+}
+
 btns.forEach(btn => {
-  btn.onclick = moveToDirection;
+  btn.onclick = addMovesToQueueInterface;
 });
 
 var multipleMoves = function(direction, times) {
