@@ -1,0 +1,57 @@
+.user-greeting {
+
+}
+
+
+.head-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.head{
+  z-index: 99;
+  height: 200px;
+  position: relative;
+}
+
+.black-bg{
+  background-color: black;
+  height: 160px;
+  width: 210px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -99;
+}
+
+.slide-text{
+  color: white;
+  font-size: 24px !important;
+  position: absolute;
+  right: 100vw;
+  top: 60px;
+  z-index: 1;
+  animation-name: rightFadeInOut;
+  animation-duration: 20s;
+  animation-timing-function: steps(80, end);
+  animation-iteration-count: infinite;
+}
+@keyframes rightFadeInOut {
+  0% {
+    position: absolute;
+    right: -10vw;
+    opacity: 1;
+  }
+
+  // 50% {
+  //   position: absolute;
+  //   right: 10rem;
+  //   opacity: 1;
+  // }
+
+  100% {
+    // opacity: 0;
+    right: 100vw;
+  }
+}

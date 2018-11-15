@@ -1,5 +1,5 @@
 .user-greeting {
-  height: 30vh;
+  height: 50vh;
   color: $blue;
   h2{
     font-size: 28px;
@@ -29,6 +29,13 @@
         font-size: 18px;
       }
     }
+}
+
+.welcome-banner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 
