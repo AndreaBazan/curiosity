@@ -1,10 +1,10 @@
 /* Your board style here */
 .controls {
 position:relative;
-left:25%;
 }
 
 .game-box {
+  flex-shrink: 0;
   border:3px solid black;
   position: relative;
   margin: 50px;
@@ -72,5 +72,10 @@ left:25%;
 .robot-board td.active {
   background-repeat: no-repeat;
   background-size: 100%;
+}
+
+.game-flex {
+      display: flex;
+    align-items: baseline;
 }
 
