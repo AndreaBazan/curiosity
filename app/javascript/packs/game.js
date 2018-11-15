@@ -152,7 +152,7 @@ function getActionsFromInterface() {
 function sendInterface() {
   const actions = getActionsFromInterface();
   actionsInput.value = JSON.stringify(actions);
-  actionsInput.form.submit();
+  Rails.fire(actionsInput.form, 'submit');
 }
 
 function clearQueueInterface() {
