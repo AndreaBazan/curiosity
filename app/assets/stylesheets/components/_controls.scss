@@ -21,8 +21,7 @@ align-items: baseline;
   display:flex;
   justify-content:center;
   margin-bottom:10px;
-  box-shadow: 2px 2px 1px grey;
-}
+  }
 
 
 
@@ -56,18 +55,26 @@ background-color:red;
 
 #left {
  transform: rotate(180deg);
+box-shadow: 2px 2px 1px grey;
 
 }
 
 
-
 #up {
  transform: rotate(270deg);
+ box-shadow: 2px 2px 1px grey;
+
 }
 
 
 #down {
  transform: rotate(90deg) ;
+ box-shadow: 2px 2px 1px grey;
+
+}
+
+#rigth {
+  box-shadow: 2px 2px 1px grey;
 }
 
 .arrows {
