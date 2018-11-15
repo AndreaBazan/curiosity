@@ -1,6 +1,7 @@
 .user-greeting {
-  height: 50vh;
+  // height: 50vh;
   color: $blue;
+  padding: 4em;
   h2{
     font-size: 28px;
   }
@@ -39,24 +40,24 @@
 }
 
 
-.user-prices {
-  color: $blue;
-  height:20vh;
-  h3{
-    font-size: 26px;
-  }
+// .user-prices {
+//   color: $blue;
+//   height:20vh;
+//   h3{
+//     font-size: 26px;
+//   }
 
-  @media (min-width: '460px') {
-     h3 {
-       font-size: 28px;
-     }
-   }
-   @media (min-width: '860px') {
-     h3 {
-       font-size: 31px;
-     }
-   }
-}
+//   @media (min-width: '460px') {
+//      h3 {
+//        font-size: 28px;
+//      }
+//    }
+//    @media (min-width: '860px') {
+//      h3 {
+//        font-size: 31px;
+//      }
+//    }
+// }
 
 .user-games{
   color: $blue;
