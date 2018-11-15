@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-sm-12 user-greeting">
     <h2 class="text-center ">Hola <%= current_user.name %>!</h2>
-    <h5 class="text-center">Listo para curiosear?</h5>
+    <h5 class="text-center">Estamos listos para curiosear?</h5>
   </div>
 </div>
   <div class="row">
@@ -16,7 +16,7 @@
     <div class="card-container ">
       <div class="row">
         <% @games.each do |game| %>
-          <div class="col-sm-12 y col-md-4">
+          <div class="col-sm-6 col-md-4">
             <div class='card' style= 'background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(<%=game.photo%>);background-repeat: no-repeat;' >
               <div class="card-description">
                 <h3 class="card-title"><%= game.title %></h3>

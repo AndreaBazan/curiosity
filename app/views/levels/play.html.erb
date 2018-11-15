@@ -8,7 +8,7 @@
       <tr>
         <% row.each do |square| %>
           <td class='<%= square %>'>
-            <% if square == :robot %>
+            <% if square == 'robot' %>
               <div class="robot-piece">
                 <%= render 'components/curioso' %>
               </div>

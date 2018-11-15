@@ -37,10 +37,59 @@ games_attributes = [
 ]
 Game.create!(games_attributes)
 
+
+boards = [
+  [
+    %w[robot empty empty wall wall empty],
+    %w[hole hole empty empty empty empty],
+    %w[empty empty empty empty empty empty],
+    %w[empty empty empty empty hole empty],
+    %w[wall empty empty wall empty empty],
+    %w[empty empty empty empty hole empty]
+  ],
+  [
+    %w[robot empty empty wall wall empty],
+    %w[hole hole empty empty empty empty],
+    %w[empty empty empty empty empty empty],
+    %w[empty empty empty empty hole empty],
+    %w[wall empty empty wall empty empty],
+    %w[empty empty empty empty hole empty]
+  ],
+  [
+    %w[robot empty empty wall wall empty],
+    %w[hole hole empty empty empty empty],
+    %w[empty empty empty empty empty empty],
+    %w[empty empty empty empty hole empty],
+    %w[wall empty empty wall empty empty],
+    %w[empty empty empty empty hole empty]
+  ],
+  [
+    %w[robot empty empty wall wall empty],
+    %w[hole hole empty empty empty empty],
+    %w[empty empty empty empty empty empty],
+    %w[empty empty empty empty hole empty],
+    %w[wall empty empty wall empty empty],
+    %w[empty empty empty empty hole empty]
+  ],
+  [
+    %w[robot empty empty wall wall empty],
+    %w[hole hole empty empty empty empty],
+    %w[empty empty empty empty empty empty],
+    %w[empty empty empty empty hole empty],
+    %w[wall empty empty wall empty empty],
+    %w[empty empty empty empty hole empty]
+  ],
+]
+
+
+
 puts 'Creating levels...'
 Game.all.each do |game|
-  5.times do
-    Level.create!(game: game)
+  boards.each do |board|
+    Level.create!(
+      game: game,
+      board: board
+    )
   end
 end
 
