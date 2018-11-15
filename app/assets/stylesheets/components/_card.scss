@@ -22,13 +22,6 @@
 }
 
 
-/*.card-category {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
-  text-transform: uppercase;
-}*/
 
 .card-title {
  text-align: center;
@@ -130,6 +123,7 @@
  margin: -40px;
 }
 
-
-
-
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-primary:focus, .btn-primary:active:focus {
+  background-color:$pink;
+  border: none;
+}
