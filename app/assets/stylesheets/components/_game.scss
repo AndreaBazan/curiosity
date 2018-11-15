@@ -28,6 +28,12 @@ left:25%;
     background-size:100%;
     background-repeat:no-repeat;
   }
+
+  td.finish {
+    background-image: asset-url("flag.png"),asset-url("grass.png");
+    background-size:100%;
+    background-repeat:no-repeat;
+  }
 }
 
 .game-box:after {
