@@ -32,8 +32,10 @@
   right: 100vw;
   top: 60px;
   z-index: 1;
-animation-name: rightFadeInOut;
-  animation-duration: 15s;
+  animation-name: rightFadeInOut;
+  animation-duration: 20s;
+  animation-timing-function: steps(80, end);
+  animation-iteration-count: infinite;
 }
 @keyframes rightFadeInOut {
   0% {
