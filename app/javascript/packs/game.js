@@ -134,7 +134,8 @@ function playQueueInterface() {
 }
 
 function convertToAction(input) {
-  if (input === 'turn_left' || input === 'turn_right') return input;
+  if (input === 'left' || input === 'right') return `turn-${input}`;
+  if (input === 'up') return 'move';
   return 'move';
 }
 
@@ -151,7 +152,7 @@ function getActionsFromInterface() {
 function sendInterface() {
   const actions = getActionsFromInterface();
   actionsInput.value = JSON.stringify(actions);
-  debugger
+  actionsInput.form.submit();
 }
 
 function clearQueueInterface() {
