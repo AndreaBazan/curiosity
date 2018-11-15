@@ -18,5 +18,6 @@
     <footer><%= render 'components/footer' %></footer>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= yield :js_pack %>
   </body>
 </html>
