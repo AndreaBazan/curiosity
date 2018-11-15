@@ -134,7 +134,7 @@ function playQueueInterface() {
 }
 
 function convertToAction(input) {
-  if (input === 'left' || input === 'right') return `turn-${input}`;
+  if (input === 'left' || input === 'right') return `turn_${input}`;
   if (input === 'up') return 'move';
   return 'move';
 }
