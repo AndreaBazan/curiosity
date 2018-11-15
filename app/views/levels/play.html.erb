@@ -25,11 +25,7 @@
   <div class="buttons">
     <div class="left">
       <button class="loading-frame race-btns" id="left" data-input="left-input">
-        <ul  class="arrows">
-          <% (1..8).each do |i|  %>
-          <li  class="circle" ></li>
-          <% end %>
-        </ul>
+       <i class="fa fa-undo left-turn"></i>
       </button>
       <input type="number" id="left-input" class="control-input" value="1">
     </div>
@@ -46,12 +42,8 @@
     </div>
 
     <div class="right">
-      <button class="loading-frame race-btns" id="right" data-input="right-input">
-        <ul class="arrows" >
-          <% (1..8).each do |i|  %>
-          <li  class="circle" ></li>
-          <% end %>
-        </ul>
+      <button class="loading-frame race-btns " id="right" data-input="right-input">
+      <i class="fa fa-undo right-turn"></i>
       </button>
       <input type="number" id="right-input" class="control-input" value="1">
     </div>
