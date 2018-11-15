@@ -1,4 +1,8 @@
 /* Your board style here */
+.controls {
+position:relative;
+left:25%;
+}
 
 .game-box {
   position: relative;
@@ -7,6 +11,7 @@
   td {
     position: relative;
     background-image:asset-url("grass.png");
+    background-size:100%;
   }
 
   td.quicksand {
@@ -16,7 +21,7 @@
   }
 
   td.tree {
-    background-image: asset-url("tree.png"),asset-url("grass.png");
+    background-image: asset-url("garbage.png"),asset-url("grass.png");
     background-size:100%;
     background-repeat:no-repeat;
   }
