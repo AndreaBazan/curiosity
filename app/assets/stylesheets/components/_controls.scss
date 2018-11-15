@@ -5,7 +5,7 @@ width:40%;
 margin: 30px;
 background-color: #001a37;
 text-shadow: 1px 1px grey;
-transform: perspective(1000px) rotate(0deg) skew(15deg) translate(0, 0);
+transform: perspective(1000px) rotate(0deg) skew(5deg) translate(0, 0);
 box-shadow: -20px 20px 10px rgba(0, 0, 0, .5);
 }
 
@@ -16,7 +16,7 @@ box-shadow: -20px 20px 10px rgba(0, 0, 0, .5);
   left: -23px;
   height:100%;
   width:20px;
-  background-color:black;
+  background-color:#001a37;
   transform: rotate(0deg) skewY(-45deg);
 }
 
@@ -28,7 +28,7 @@ box-shadow: -20px 20px 10px rgba(0, 0, 0, .5);
   left: -12px;
   height:20px;
   width:100%;
-  background-color:black;
+  background-color:#001a37;
   transform: rotate(0deg) skewX(-45deg);
 }
 
