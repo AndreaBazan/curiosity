@@ -126,6 +126,8 @@ function addMovesToQueueInterface() {
   queueInterface.insertAdjacentHTML('beforeend', queueInterfaceElement(direction, times))
 }
 
+
+// Buttons Listeners
 btns.forEach(btn => {
   btn.onclick = addMovesToQueueInterface;
 });
