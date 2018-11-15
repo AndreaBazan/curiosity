@@ -2,6 +2,8 @@ const robotPiece = document.querySelector('.robot-piece');
 const btns = document.querySelectorAll(".race-btns");
 const playQueueButton = document.querySelector("#play-queue");
 const clearQueueButton = document.querySelector("#clear-queue");
+const queueInterface = document.querySelector('#queue-interface');
+const actionsInput = document.querySelector('#play_session_actions');
 
 // check if a tile have an empty neighbour
 function canMove(direction) {
@@ -107,14 +109,6 @@ function moveTile(direction) {
 
 let playerMoves = [];
 
-function moveToDirection() {
-  const inputID = this.getAttribute('data-input');
-  const times = document.getElementById(inputID).value;
-  const direction = this.id;
-
-  multipleMoves(direction, times);
-}
-
 const queueInterfaceElement = (type, executions) => `
   <li data-type="${type}" data-executions="${executions}">${type} ${executions}</li>
 `
@@ -124,21 +118,55 @@ function addMovesToQueueInterface() {
   const inputID = this.getAttribute('data-input');
   const times = document.getElementById(inputID).value;
   const direction = this.id;
-
-  const queueInterface = document.querySelector('#queue-interface');
   queueInterface.insertAdjacentHTML('beforeend', queueInterfaceElement(direction, times))
+}
+
+function playQueueInterface() {
+  let string_of_movements = "window.multipleMoves()"
+  queueInterface.querySelectorAll('li').forEach(action => {
+    const action_type = action.dataset.type;
+    const times = parseInt(action.dataset.executions);
+    string_of_movements += `.then(
+      robot => robot.multipleMoves('${action_type}', ${times})
+    )`
+  })
+  eval(string_of_movements)
+}
+
+function convertToAction(input) {
+  if (input === 'turn_left' || input === 'turn_right') return input;
+  return 'move';
+}
+
+function getActionsFromInterface() {
+  actions = []
+  queueInterface.querySelectorAll('li').forEach(action => {
+    const action_type = convertToAction(action.dataset.type);
+    const times = parseInt(action.dataset.executions);
+    actions.push({ type: action_type, executions: times });
+  })
+  return actions;
+}
+
+function sendInterface() {
+  const actions = getActionsFromInterface();
+  actionsInput.value = JSON.stringify(actions);
+  debugger
+}
+
+function clearQueueInterface() {
+  queueInterface.innerHTML = '';
 }
 
 // Buttons Listeners
 btns.forEach(btn => {
   btn.onclick = addMovesToQueueInterface;
 });
-playQueueButton.onclick = playQueueInterface;
+playQueueButton.onclick = sendInterface;
 clearQueueButton.onclick = clearQueueInterface;
 
-
-
 var multipleMoves = function(direction, times) {
+  const delay = times ? 1000 : 0;
   return new Promise(function(resolve) {
     for (let i = 0; i < times; i++){
       if (canMove(direction)) {
@@ -147,7 +175,7 @@ var multipleMoves = function(direction, times) {
     }
     setTimeout( _ => {
       resolve(window);
-    }, 1000);
+    }, delay);
   });
 }
 
