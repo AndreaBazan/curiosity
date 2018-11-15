@@ -15,6 +15,7 @@ $arm-movement: -2%;
   height: 100%;
   width: 80%;
   position: relative;
+  transform: perspective(350px) rotate(0deg) skew(-10deg) translate(10px, -40px);
 }
 
 .robot-piece {
@@ -69,6 +70,7 @@ $arm-movement: -2%;
   animation-name: head-idle;
   animation-duration: 1s;
   top: $head-position;
+  left: -5%;
 }
 
 .curi-body {
@@ -76,6 +78,7 @@ $arm-movement: -2%;
   animation-name: body-idle;
   animation-duration: 0.75s;
   top: $body-position;
+  left: -3%;
 }
 
 .curi-wheels {
@@ -91,6 +94,7 @@ $arm-movement: -2%;
   animation-duration: 0.5s;
   top: $arm-position;
   transform: rotateY(0deg) rotateX(180deg) translateY(47%);
+  left: -4%;
 }
 
 .curi-right-arm {
@@ -99,6 +103,7 @@ $arm-movement: -2%;
   animation-duration: 0.5s;
   top: $arm-position;
   transform: rotateY(180deg) rotateX(180deg) translateY(47%);
+  left: -8%;
 }
 
 .curi-left-arm.up {
