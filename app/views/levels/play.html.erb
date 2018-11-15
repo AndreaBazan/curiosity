@@ -1,7 +1,7 @@
 <h1 class="text-center"></h1>
 <hr>
 
-<div class="game-box">
+<div class=" game-box">
 
   <table class="robot-board">
     <% @board.each do |row| %>
@@ -19,95 +19,34 @@
     <% end %>
   </table>
 </div>
+<hr>
 
-<!-- <table class="racer_table">
-  <tr id="player1_race">
-    <td class="active"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr >
-    <td ></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td class="robot"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr >
-    <td ></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr >
-    <td ></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr >
-    <td ></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
- --><hr>
-<div class="left">
-  <button id="left" data-input="left-input" class="race-btns">left</button>
-  <input type="number" id="left-input" value="1">
-</div>
-<div class="right">
-  <button id="right" data-input="right-input" class="race-btns">right</button>
-  <input type="number" id="right-input" value="1">
-</div>
-<div class="up">
-  <button id="up" data-input="up-input" class="race-btns">up</button>
-  <input type="number" id="up-input" value="1">
-</div>
-<div class="down">
-  <button id="down" data-input="down-input" class="race-btns">down</button>
-  <input type="number" id="down-input" value="1">
+
+
+<div class=" controls">
+  <div class="loading-frame race-btns" id="left">
+    <% (1..10).each do |i|  %>
+      <button class="circle " ></button>
+    <% end %>
+  </div>
+
+  <div class="loading-frame race-btns" id="right">
+    <% (1..10).each do |i|  %>
+      <button class="circle race" ></button>
+    <% end %>
+  </div>
+
+  <div class="loading-frame race-btns" id="down">
+    <% (1..10).each do |i|  %>
+      <button class="circle race" ></button>
+    <% end %>
+  </div>
+
+  <div class="loading-frame race-btns" id="up">
+    <% (1..10).each do |i|  %>
+      <button class="circle race" ></button>
+    <% end %>
+  </div>
 </div>
 
 <%= javascript_pack_tag 'game' %>

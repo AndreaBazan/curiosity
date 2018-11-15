@@ -3,11 +3,11 @@ class LevelsController < ApplicationController
     @level = Level.find(params[:id])
     # @board = @level.board
     @board = [
-      %i[robot empty empty hole],
-      %i[hole hole empty hole],
-      %i[empty wall empty wall],
-      %i[empty wall empty wall],
-      %i[empty empty empty hole]
+      %i[robot empty empty quicksand],
+      %i[quicksand quicksand empty quicksand],
+      %i[empty tree empty tree],
+      %i[empty tree empty tree],
+      %i[empty empty empty quicksand]
     ]
   end
 end
