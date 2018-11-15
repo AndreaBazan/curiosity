@@ -1,5 +1,5 @@
 # Models the squares that compose a board
-class Square
+class Game::Square
   attr_reader :state
 
   RESULTS = {

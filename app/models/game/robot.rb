@@ -1,7 +1,7 @@
 # Models the Robor behavior for the game
-class Robot
+class Game::Robot
   FACINGS = [:south, :east, :north, :west]
-  attr_reader :facing
+  attr_reader :facing, :movements
 
   def initialize(attr = {})
     @position = attr[:position] || [1, 1]
@@ -9,6 +9,7 @@ class Robot
     @facing = facing
     @errors = {}
     @board = attr[:board] || Board.new
+    @movements = []
   end
 
   def position
@@ -21,6 +22,7 @@ class Robot
       change_position
       check_errors
     end
+    save_movement(executions) unless @errors.any?
     self
   end
 
@@ -73,5 +75,9 @@ class Robot
   def check_errors
     result = @board.square_at(@position).result
     @errors.merge!(result) unless result.nil?
+  end
+
+  def save_movement(executions)
+    @movements << OpenStruct.new(facing: @facing, executions: executions)
   end
 end

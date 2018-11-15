@@ -1,5 +1,5 @@
 # Defines the Board where the Robot walks
-class Board
+class Game::Board
   def initialize(attr = {})
     @squares = attr[:squares] || [[Square.new]]
     @oob = Square.new(:oob)
