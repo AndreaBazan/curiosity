@@ -1,0 +1,4 @@
+<% moves = @robot.movements.map do |movement|
+  ".then(robot => robot.multipleMoves('#{movement.type}', #{movement.executions}))"
+end.join %>
+<%= ('multipleMoves()' + moves).html_safe %>
