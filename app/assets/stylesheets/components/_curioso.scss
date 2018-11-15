@@ -61,6 +61,7 @@ $arm-movement: -2%;
   left: 0;
   animation-duration: 1s;
   animation-iteration-count: infinite;
+  transform:skewX(5deg);
 }
 
 .curi-head {

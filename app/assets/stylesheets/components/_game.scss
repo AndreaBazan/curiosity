@@ -5,8 +5,11 @@ left:25%;
 }
 
 .game-box {
+  border:3px solid black;
   position: relative;
   margin: 50px;
+  transform: perspective(1000px) rotate(0deg) skew(5deg) translate(0, 0);
+  box-shadow: -20px 20px 10px rgba(0, 0, 0, .5);
 
   td {
     position: relative;
@@ -25,6 +28,29 @@ left:25%;
     background-size:100%;
     background-repeat:no-repeat;
   }
+}
+
+.game-box:after {
+  content:'';
+  position:absolute;
+      bottom: -10px;
+    left: -20px;
+  height:100%;
+  width:20px;
+  background-color:#001a37;
+  transform: rotate(0deg) skewY(-45deg);
+}
+
+
+.game-box:before {
+  content:'';
+  position:absolute;
+  bottom: -22px;
+  left: -11px;
+  height:20px;
+  width:100%;
+  background-color:#001a37;
+  transform: rotate(0deg) skewX(-45deg);
 }
 
 .robot {

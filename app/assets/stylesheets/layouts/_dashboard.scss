@@ -1,15 +1,15 @@
 .user-greeting {
-  height: 15vh;
+  height: 30vh;
   color: $blue;
   h2{
     font-size: 28px;
   }
-  
+
   @media (min-width: '460px') {
      h2 {
        font-size: 32px;
      }
-   } 
+   }
    @media (min-width: '860px') {
      h2 {
        font-size: 42px;
@@ -18,7 +18,7 @@
    h5{
      font-size: 14px;
    }
-   
+
    @media (min-width: '460px') {
       h5 {
         font-size: 16px;
@@ -38,7 +38,7 @@
   h3{
     font-size: 26px;
   }
-  
+
   @media (min-width: '460px') {
      h3 {
        font-size: 28px;
@@ -57,7 +57,7 @@
   h3{
     font-size: 26px;
   }
-  
+
   @media (min-width: '460px') {
      h3 {
        font-size: 28px;
@@ -75,7 +75,7 @@
   h3{
     font-size: 26px;
   }
-  
+
   @media (min-width: '460px') {
      h3 {
        font-size: 28px;

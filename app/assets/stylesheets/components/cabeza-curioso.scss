@@ -1,0 +1,24 @@
+.user-greeting {
+  background-image: asset-url('head.png') ;
+  background-repeat: no-repeat;
+  background-size:20%;
+}
+
+@keyframes rightFadeInOut {
+  0% {
+    position: absolute;
+    right: -3rem;
+    opacity: 0;
+  }
+
+  75% {
+    position: absolute;
+    right: 10rem;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    right: 10rem;
+  }
+}
