@@ -1,5 +1,7 @@
 const robotPiece = document.querySelector('.robot-piece');
 const btns = document.querySelectorAll(".race-btns");
+const playQueueButton = document.querySelector("#play-queue");
+const clearQueueButton = document.querySelector("#clear-queue");
 
 // check if a tile have an empty neighbour
 function canMove(direction) {
@@ -117,6 +119,7 @@ const queueInterfaceElement = (type, executions) => `
   <li data-type="${type}" data-executions="${executions}">${type} ${executions}</li>
 `
 
+// Button Actions
 function addMovesToQueueInterface() {
   const inputID = this.getAttribute('data-input');
   const times = document.getElementById(inputID).value;
@@ -126,11 +129,14 @@ function addMovesToQueueInterface() {
   queueInterface.insertAdjacentHTML('beforeend', queueInterfaceElement(direction, times))
 }
 
-
 // Buttons Listeners
 btns.forEach(btn => {
   btn.onclick = addMovesToQueueInterface;
 });
+playQueueButton.onclick = playQueueInterface;
+clearQueueButton.onclick = clearQueueInterface;
+
+
 
 var multipleMoves = function(direction, times) {
   return new Promise(function(resolve) {
