@@ -29,13 +29,30 @@
         <div class='card game-card' style = 'background-image: url(http://placehold.it/600x450/041A35/FFFFFF?text=<%= index %>); background-repeat: no-repeat;' >
           <div class="card-description">
             <div class="card-play">
-              <%= link_to play_game_level_path(@game, level), :class=>"card-btn" do%>
-                <i class="fa fa-play btn-play"></i>
-              <% end %>
+              <a class="card-btn">
+                <i class="fa fa-play btn-play" data-toggle="modal" data-target="#myModal"></i>
+              </a>
             </div>
           </div>
         </div>
       </div>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Instrucciones</h4>
+      </div>
+      <div class="modal-body">
+        Lleva a Robotso al final de la meta. Usa las flechas para moverlo y dale play para empezar la diversión!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <%= link_to 'Vamos a jugar', play_game_level_path(@game, level), :class=>"btn btn-primary" %> 
+      </div>
+    </div>
+  </div>
+</div>
     <% end %>
   </div>
  </div>

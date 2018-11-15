@@ -130,6 +130,7 @@
  margin: -40px;
 }
 
-
-
-
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-primary:focus, .btn-primary:active:focus {
+  background-color:$pink;
+  border: none;
+}
