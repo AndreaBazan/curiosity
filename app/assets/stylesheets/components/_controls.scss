@@ -1,5 +1,4 @@
 .controls {
-border:3px solid #3d8eb9;
 height:40%;
 width:40%;
 margin: 30px;
@@ -8,6 +7,7 @@ text-shadow: 1px 1px grey;
 transform: perspective(1000px) rotate(0deg) skew(5deg) translate(0, 0);
 box-shadow: -20px 20px 10px rgba(0, 0, 0, .5);
 }
+
 
 .controls:after {
   content:'';
@@ -31,6 +31,20 @@ box-shadow: -20px 20px 10px rgba(0, 0, 0, .5);
   background-color:#001a37;
   transform: rotate(0deg) skewX(-45deg);
 }
+
+.output {
+  display:flex;
+  justify-content:center
+}
+
+.screen {
+   width:90%;
+   border:5px solid #263F57;
+  background-color:grey;
+  text-align:center;
+  color:white;
+}
+//btn
 
 
 .buttons {
@@ -57,6 +71,8 @@ align-items: baseline;
    width:100px;
   height:100px;
 }
+
+
 
 //btns
 
@@ -100,6 +116,10 @@ font-size:30px;
   list-style-type: none;
   transform: translate(-2px, -35px);
 }
+
+
+//btn
+
 
 .circle {
   position: absolute;
@@ -191,6 +211,10 @@ font-size:30px;
   text-shadow: 0px 0px 10px #3FC380;
 }
 
+.queue-interface {
+  li {
 
+  }
+}
 
 
