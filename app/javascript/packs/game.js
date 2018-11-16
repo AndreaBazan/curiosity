@@ -166,6 +166,7 @@ function resetPiecePosition() {
   robotPiece.style.display = 'none'
   setPiecePosition(1, 1);
   setTimeout(_ => { robotPiece.style.display = 'block' }, 3);
+  robotPiece.classList.value = 'robot-piece'
 }
 
 function restartGame() {
@@ -211,7 +212,7 @@ var displayErrors = function(errors) {
 var displaySuccess = function(message) {
   const delay = 700;
   return new Promise(function(resolve) {
-    displayModalFor('contrats')
+    displayModalFor('congrats')
     setTimeout( _ => {
       resolve(window);
     }, delay);

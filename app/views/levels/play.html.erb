@@ -69,8 +69,7 @@
           <%= image_tag "fell.png", class: 'head' %>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Seguir jugando!</button>
+          <button onclick="window.restartGame();" type="button" class="btn btn-primary" data-dismiss="modal">Empiezar de Nuevo</button>
         </div>
       </div>
     </div>
@@ -86,8 +85,7 @@
           <%= image_tag "crashed.png", class: 'head' %>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Seguir jugando!</button>
+          <button onclick="window.restartGame();" type="button" class="btn btn-primary" data-dismiss="modal">Empiezar de Nuevo</button>
         </div>
       </div>
     </div>
@@ -103,8 +101,8 @@
           <%= image_tag "finished.png", class: 'head' %>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Seguir jugando!</button>
+          <button onclick="window.restartGame();" type="button" class="btn btn-default" data-dismiss="modal">Empiezar de Nuevo</button>
+          <%= link_to 'Proximo nivel!', play_game_level_path(@level.game, @next_level), class: 'btn btn-primary' %>
         </div>
       </div>
     </div>
