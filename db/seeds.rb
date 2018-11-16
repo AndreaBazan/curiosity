@@ -11,7 +11,7 @@ User.create!(
 puts 'Creating games...'
 games_attributes = [
   {
-    title:         'Debugging',
+    title:         'Procedural Thinking',
     photo:          'https://res.cloudinary.com/dsclisbti/image/upload/v1541619453/photo-1527612820672-5b56351f7346.jpg',
   },
   {
