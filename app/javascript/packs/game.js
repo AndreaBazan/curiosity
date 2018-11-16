@@ -49,7 +49,8 @@ function moveTile(direction) {
   let move;
   let x;
   let y;
-
+  robotPiece.classList.value = 'robot-piece';
+  robotPiece.classList.add(direction);
   // Direction
   switch (direction) {
     case 'left' :
