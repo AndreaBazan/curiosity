@@ -159,15 +159,22 @@ function clearQueueInterface() {
   queueInterface.innerHTML = '';
 }
 
+function restartGame() {
+  clearQueueInterface();
+  robotPiece.style.transitionDuration = '0s';
+  setPiecePosition(1, 1);
+  setTimeout(_ => { robotPiece.style.transitionDuration = ''}, 100);
+}
+
 // Buttons Listeners
 btns.forEach(btn => {
   btn.onclick = addMovesToQueueInterface;
 });
 playQueueButton.onclick = sendInterface;
-clearQueueButton.onclick = clearQueueInterface;
+clearQueueButton.onclick = restartGame;
 
 var multipleMoves = function(direction, times) {
-  const delay = times ? 1000 : 0;
+  const delay = times ? 700 : 0;
   return new Promise(function(resolve) {
     for (let i = 0; i < times; i++){
       if (canMove(direction)) {
@@ -181,7 +188,7 @@ var multipleMoves = function(direction, times) {
 }
 
 var displayErrors = function(errors) {
-  const delay = 1000;
+  const delay = 700;
   return new Promise(function(resolve) {
     alert(errors);
     setTimeout( _ => {
@@ -191,7 +198,7 @@ var displayErrors = function(errors) {
 }
 
 var displaySuccess = function(message) {
-  const delay = 1000;
+  const delay = 700;
   return new Promise(function(resolve) {
     alert(message);
     setTimeout( _ => {
@@ -204,11 +211,13 @@ window.multipleMoves = multipleMoves;
 window.displayErrors = displayErrors;
 window.displaySuccess = displaySuccess;
 
-function setPiecePosition() {
-  console.log('Set piece')
+function setPiecePosition(x, y) {
   let robot = document.querySelector('.robot');
-  robotPiece.style.left = robot.offsetLeft + 'px'
-  robotPiece.style.top = robot.offsetTop + 'px'
+  x = x || robot.offsetLeft
+  y = y || robot.offsetTop
+  console.log('Set piece')
+  robotPiece.style.left = x + 'px'
+  robotPiece.style.top = y + 'px'
 }
 
 // Initial Game State
