@@ -38,7 +38,6 @@ function canMove(direction) {
       return !down;
       break;
       default:
-      console.log('Something went wrong');
   }
 }
 
@@ -102,7 +101,6 @@ function moveTile(direction) {
       // Get actual row by Parent Element && nextRow && cell by CellIndex
       break;
     default:
-      console.log('Something went wrong');
   }
   setPiecePosition();
 }
@@ -151,6 +149,7 @@ function getActionsFromInterface() {
 }
 
 function sendInterface() {
+  resetPiecePosition();
   const actions = getActionsFromInterface();
   actionsInput.value = JSON.stringify(actions);
   Rails.fire(actionsInput.form, 'submit');
@@ -160,13 +159,19 @@ function clearQueueInterface() {
   queueInterface.innerHTML = '';
 }
 
-function restartGame() {
-  clearQueueInterface();
-  robotPiece.style.transitionDuration = '0s';
+function resetPiecePosition() {
+  // robotPiece.style.transitionDuration = '0s';
   document.querySelector('.robot').classList.remove('robot');
   document.querySelector('td').classList.add('robot');
+  robotPiece.style.display = 'none'
   setPiecePosition(1, 1);
-  setTimeout(_ => { robotPiece.style.transitionDuration = ''}, 100);
+  setTimeout(_ => { robotPiece.style.display = 'block' }, 3);
+  robotPiece.classList.value = 'robot-piece'
+}
+
+function restartGame() {
+  clearQueueInterface();
+  resetPiecePosition();
 }
 
 // Buttons Listeners
@@ -190,10 +195,14 @@ var multipleMoves = function(direction, times) {
   });
 }
 
+function displayModalFor(status) {
+  window.$(`#${status}Modal`).modal();
+}
+
 var displayErrors = function(errors) {
   const delay = 700;
   return new Promise(function(resolve) {
-    alert(errors);
+    displayModalFor(errors)
     setTimeout( _ => {
       resolve(window);
     }, delay);
@@ -203,25 +212,26 @@ var displayErrors = function(errors) {
 var displaySuccess = function(message) {
   const delay = 700;
   return new Promise(function(resolve) {
-    alert(message);
+    displayModalFor('congrats')
     setTimeout( _ => {
       resolve(window);
     }, delay);
   });
 }
 
-window.multipleMoves = multipleMoves;
-window.displayErrors = displayErrors;
-window.displaySuccess = displaySuccess;
-
 function setPiecePosition(x, y) {
   let robot = document.querySelector('.robot');
   x = x || robot.offsetLeft
   y = y || robot.offsetTop
-  console.log('Set piece')
   robotPiece.style.left = x + 'px'
   robotPiece.style.top = y + 'px'
 }
 
 // Initial Game State
 setPiecePosition();
+
+window.multipleMoves = multipleMoves;
+window.displayErrors = displayErrors;
+window.displaySuccess = displaySuccess;
+window.clearQueueInterface = clearQueueInterface;
+window.restartGame = restartGame;

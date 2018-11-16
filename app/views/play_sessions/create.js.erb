@@ -3,7 +3,7 @@
 end.join %>
 
 <% if @robot.has_errors? %>
-  <% error = @robot.errors.first.map { |key, value| "#{key.capitalize}: #{value}" }.join %>
+  <% error = @robot.errors.keys[0] %>
   <% moves += ".then(robot => robot.displayErrors('#{error}'))" %>
 <% end %>
 
