@@ -1,10 +1,11 @@
 .controls {
-width: 100%;
-margin: 30px;
-background-color: #001a37;
-text-shadow: 1px 1px grey;
-transform: perspective(1000px) rotate(0deg) skew(0deg) translate(0, 0);
-box-shadow: -20px 20px 10px rgba(0, 0, 0, .5);
+  width: 100%;
+  margin: 30px;
+  background-color: #001a37;
+  text-shadow: 1px 1px grey;
+  transform: perspective(1000px) rotate(0deg) skew(0deg) translate(0, 0);
+  box-shadow: -20px 20px 10px rgba(0, 0, 0, .5);
+  flex: 0 0 350px;
 }
 
 

@@ -1,0 +1,32 @@
+@import url("https://cssicon.space/css/icons.css");
+
+.icon, .icon:before, .icon:after, .icon i, .icon i:before, .icon i:after { 
+  transition: all 0.4s ease;
+  color: #0f0;  
+}
+.icon {
+  border-color: transparent !important;
+  zoom: 2.5;
+  margin: 0 auto;
+  display: block;
+  top: 8%;
+  left: 24%;
+  position: relative !important; 
+  transform: scaleX(1.5);
+}
+
+.left, .right, .up {
+  .icon { display: none; }
+}
+
+@keyframes blink {
+  0%   { border-width: 1px; }
+  45%  { border-width: 1px; }
+  50%  { border-width: 0px; }
+  55%  { border-width: 1px; }
+  100% { border-width: 1px; }
+}
+
+.smile.icon:after, .smile.icon:before {
+  animation: blink 5s infinite;
+}
