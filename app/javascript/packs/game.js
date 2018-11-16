@@ -180,7 +180,18 @@ var multipleMoves = function(direction, times) {
   });
 }
 
+var displayErrors = function(errors) {
+  const delay = 1000;
+  return new Promise(function(resolve) {
+    alert(errors);
+    setTimeout( _ => {
+      resolve(window);
+    }, delay);
+  });
+}
+
 window.multipleMoves = multipleMoves;
+window.displayErrors = displayErrors;
 
 function setPiecePosition() {
   console.log('Set piece')

@@ -1,4 +1,10 @@
-<% moves = @robot.movements.map do |movement|
+<% moves = 'multipleMoves()' + @robot.movements.map do |movement|
   ".then(robot => robot.multipleMoves('#{movement.type}', #{movement.executions}))"
 end.join %>
-<%= ('multipleMoves()' + moves).html_safe %>
+
+<% if @robot.errors.any? %>
+  <% error = @robot.errors.first.map { |key, value| "#{key.capitalize}: #{value}" }.join %>
+  <% moves += ".then(robot => robot.displayErrors('#{error}'))" %>
+<% end %>
+
+<%= (moves).html_safe %>
