@@ -8,6 +8,9 @@
   flex: 0 0 350px;
 }
 
+.arrows{
+  transform:rotate(-90deg);
+}
 
 .output {
   display:flex;
@@ -73,14 +76,7 @@ transform: rotateY(180deg);
 
 
 
-.arrows {
-  box-sizing:border-box;
-  width:100%;
-  position:relative;
-  top:10px;
-  list-style-type: none;
-  transform: translate(-2px, -35px);
-}
+
 
 
 //btn
