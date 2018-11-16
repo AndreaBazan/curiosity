@@ -1,10 +1,10 @@
 .level-container{
-  color: $blue;
+  color: white;
   h1{
     padding: 0.5em;
   }
   h2, h3, h4{
-    color: $blue;
+    color: white;
     font-family: $body-font;
     text-transform: uppercase;
   }
@@ -32,4 +32,8 @@
 
 .btn{
   font-size: 17px;
+}
+
+.level-game-name {
+  background-color: rgba(0,0,0,0.4);
 }

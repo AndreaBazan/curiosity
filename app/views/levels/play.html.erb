@@ -1,61 +1,66 @@
-<h1 class="text-center"></h1>
-<hr>
 
-<div class="game-flex">
-  <section class="game-box">
-    <table class="robot-board">
-      <% @board.each do |row| %>
-      <tr>
-        <% row.each do |square| %>
-        <td class='<%= square %>'>
-          <% if square == 'robot' %>
-          <div class="robot-piece">
-            <%= render 'components/curioso' %>
-          </div>
+
+<div class="dashboard-banner">
+  <h1 class="game-greeting text-center"><%= @level.game.title %></h1>
+  <div class="game-flex">
+    <section class="game-box">
+      <table class="robot-board">
+        <% @board.each do |row| %>
+        <tr>
+          <% row.each do |square| %>
+          <td class='<%= square %>'>
+            <% if square == 'robot' %>
+            <div class="robot-piece">
+              <%= render 'components/curioso' %>
+            </div>
+            <% end %>
+          </td>
           <% end %>
-        </td>
+        </tr>
         <% end %>
-      </tr>
-      <% end %>
-    </table>
-  </section>
-<section class="controls" id='controls'>
-  <h3 class="text-center" style="color: white" >Controles</h3>
-  <div class="buttons">
-    <div class="left">
-      <button class="loading-frame race-btns" id="left" data-input="left-input">
-       <i class="fa fa-undo left-turn"></i>
-      </button>
-      <input type="number" id="left-input" class="control-input" value="1">
-    </div>
+      </table>
+    </section>
+    <section class="controls" id='controls'>
+      <h3 class="text-center" style="color: white" >Controles</h3>
+      <div class="buttons">
 
-    <div class="up">
-      <button class="loading-frame race-btns" id="up" data-input="up-input">
-        <ul class="arrows" >
-          <% (1..8).each do |i|  %>
-          <li  class="circle" ></li>
-          <% end %>
-        </ul>
-      </button>
-      <input type="number" id="up-input" class="control-input" value="1">
-    </div>
 
-    <div class="right">
-      <button class="loading-frame race-btns " id="right" data-input="right-input">
-      <i class="fa fa-undo right-turn"></i>
-      </button>
-      <input type="number" id="right-input" class="control-input" value="1">
-    </div>
+
+
+       <div class="up">
+        <button class=" race-btns" id="up" data-input="up-input">
+          Avanza
+        </button>
+        <input type="number" id="up-input" class="control-input" value="1">
+      </div>
+
+        <div class="left">
+          <button class="loading-frame race-btns" id="left" data-input="left-input">
+           <i class="fa fa-undo left-turn"></i>
+         </button>
+         <input type="number" id="left-input" class="control-input" value="1">
+       </div>
+
+
+      <div class="right">
+        <button class="loading-frame race-btns " id="right" data-input="right-input">
+          <i class="fa fa-undo right-turn"></i>
+        </button>
+        <input type="number" id="right-input" class="control-input" value="1">
+      </div>
       <div>
         <button id="clear-queue" class="play-moves"><i class="fa fa-times"></i></button>
         <button id="play-queue" class="play-moves"><i class="fa fa-play"></i></button>
       </div>
     </div>
-    <section>
-      <ul class="list-unstyled" id="queue-interface"></ul>
-    </section>
+    <section class="output">
+     <div class="screen">
+      <h3>Movimientos</h3>
+      <ul class="list-unstyled queue-interface" id="queue-interface"></ul>
+    </div>
   </section>
-</div>
+  </section>
+  </div>
 
 <div>
   <div class="modal fade" id="feltModal" tabindex="-1" role="dialog" aria-labelledby="feltMessage">
@@ -69,7 +74,7 @@
           <%= image_tag "fell.png", class: 'head' %>
         </div>
         <div class="modal-footer">
-          <button onclick="window.restartGame();" type="button" class="btn btn-primary" data-dismiss="modal">Empiezar de Nuevo</button>
+          <button onclick="window.restartGame();" type="button" class="btn btn-primary" data-dismiss="modal">Empieza de Nuevo</button>
         </div>
       </div>
     </div>
@@ -107,12 +112,11 @@
       </div>
     </div>
   </div>
-</div>
 
-<%= form_for [@level, @play_session], remote: true do |form| %>
+  <%= form_for [@level, @play_session], remote: true do |form| %>
   <%= form.hidden_field :actions %>
-<% end %>
+  <% end %>
 
-<% content_for :js_pack do %>
+  <% content_for :js_pack do %>
   <%= javascript_pack_tag 'game' %>
-<% end %>
+  <% end %></div>

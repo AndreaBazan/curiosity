@@ -15,7 +15,7 @@ $arm-movement: -2%;
   height: 100%;
   width: 80%;
   position: relative;
-  transform: perspective(350px) rotate(0deg) skew(-10deg) translate(10px, -40px);
+  transform: perspective(350px) rotate(0deg) skew(0deg) translate(10px, -40px);
 }
 
 .robot-piece {
