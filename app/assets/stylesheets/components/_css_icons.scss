@@ -13124,10 +13124,6 @@
     transform: scaleX(1.5);
   }
   
-  .left, .right, .up {
-    .icon { display: none; }
-  }
-  
   @keyframes blink {
     0%   { border-width: 1px; }
     45%  { border-width: 1px; }
@@ -13141,3 +13137,6 @@
   }
 }
 
+.left, .right, .up {
+  .icon { display: none !important; }
+}
