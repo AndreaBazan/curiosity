@@ -40,7 +40,7 @@ Game.create!(games_attributes)
 
 boards = [
   [
-    %w[robot empty empty wall wall empty],
+    %w[robot empty finish wall wall empty],
     %w[hole hole empty empty empty empty],
     %w[empty empty empty empty empty empty],
     %w[empty empty empty empty hole empty],
