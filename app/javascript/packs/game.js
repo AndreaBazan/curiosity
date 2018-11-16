@@ -162,6 +162,8 @@ function clearQueueInterface() {
 function restartGame() {
   clearQueueInterface();
   robotPiece.style.transitionDuration = '0s';
+  document.querySelector('.robot').classList.remove('robot');
+  document.querySelector('td').classList.add('robot');
   setPiecePosition(1, 1);
   setTimeout(_ => { robotPiece.style.transitionDuration = ''}, 100);
 }
