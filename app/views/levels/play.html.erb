@@ -82,6 +82,30 @@
     </div>
   </div>
 </div>
+
+<div>
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#crashed">
+    Error Message-crashed
+  </button>
+  <div class="modal fade" id="crashed" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Oops! Curioso chocó con la basura! ☹️</h4>
+        </div>
+        <div class="modal-body">
+          <%= image_tag "crashed.png", class: 'head' %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Seguir jugando!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <%= form_for [@level, @play_session], remote: true do |form| %>
   <%= form.hidden_field :actions %>
 <% end %>
