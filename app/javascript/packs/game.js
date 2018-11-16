@@ -49,7 +49,8 @@ function moveTile(direction) {
   let move;
   let x;
   let y;
-
+  robotPiece.classList.value = 'robot-piece';
+  robotPiece.classList.add(direction);
   // Direction
   switch (direction) {
     case 'left' :
@@ -159,15 +160,24 @@ function clearQueueInterface() {
   queueInterface.innerHTML = '';
 }
 
+function restartGame() {
+  clearQueueInterface();
+  robotPiece.style.transitionDuration = '0s';
+  document.querySelector('.robot').classList.remove('robot');
+  document.querySelector('td').classList.add('robot');
+  setPiecePosition(1, 1);
+  setTimeout(_ => { robotPiece.style.transitionDuration = ''}, 100);
+}
+
 // Buttons Listeners
 btns.forEach(btn => {
   btn.onclick = addMovesToQueueInterface;
 });
 playQueueButton.onclick = sendInterface;
-clearQueueButton.onclick = clearQueueInterface;
+clearQueueButton.onclick = restartGame;
 
 var multipleMoves = function(direction, times) {
-  const delay = times ? 1000 : 0;
+  const delay = times ? 700 : 0;
   return new Promise(function(resolve) {
     for (let i = 0; i < times; i++){
       if (canMove(direction)) {
@@ -180,13 +190,37 @@ var multipleMoves = function(direction, times) {
   });
 }
 
-window.multipleMoves = multipleMoves;
+var displayErrors = function(errors) {
+  const delay = 700;
+  return new Promise(function(resolve) {
+    alert(errors);
+    setTimeout( _ => {
+      resolve(window);
+    }, delay);
+  });
+}
 
-function setPiecePosition() {
-  console.log('Set piece')
+var displaySuccess = function(message) {
+  const delay = 700;
+  return new Promise(function(resolve) {
+    alert(message);
+    setTimeout( _ => {
+      resolve(window);
+    }, delay);
+  });
+}
+
+window.multipleMoves = multipleMoves;
+window.displayErrors = displayErrors;
+window.displaySuccess = displaySuccess;
+
+function setPiecePosition(x, y) {
   let robot = document.querySelector('.robot');
-  robotPiece.style.left = robot.offsetLeft + 'px'
-  robotPiece.style.top = robot.offsetTop + 'px'
+  x = x || robot.offsetLeft
+  y = y || robot.offsetTop
+  console.log('Set piece')
+  robotPiece.style.left = x + 'px'
+  robotPiece.style.top = y + 'px'
 }
 
 // Initial Game State

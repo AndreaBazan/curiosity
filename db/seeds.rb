@@ -11,7 +11,7 @@ User.create!(
 puts 'Creating games...'
 games_attributes = [
   {
-    title:         'Debugging',
+    title:         'Procedural Thinking',
     photo:          'https://res.cloudinary.com/dsclisbti/image/upload/v1541619453/photo-1527612820672-5b56351f7346.jpg',
   },
   {
@@ -40,8 +40,8 @@ Game.create!(games_attributes)
 
 boards = [
   [
-    %w[robot empty empty wall wall empty],
-    %w[hole hole empty empty empty empty],
+    %w[robot empty finish wall wall empty],
+    %w[hole empty empty empty empty empty],
     %w[empty empty empty empty empty empty],
     %w[empty empty empty empty hole empty],
     %w[wall empty empty wall empty empty],

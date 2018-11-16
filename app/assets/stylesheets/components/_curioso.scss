@@ -113,3 +113,71 @@ $arm-movement: -2%;
 .curi-right-arm.up {
   transform: rotateY(180deg) rotateX(0deg) translateY(-3%);
 }
+
+.left {
+  .curi-wheels {
+    background-image: asset-url('rueda-lado.png');
+    z-index:1;
+  }
+
+  .curi-body {
+    background-image: asset-url('cuerpo-der.png');
+    transform: rotateY(180deg);
+  }
+
+  .curi-head {
+    background-image: asset-url('head-der.png');
+    transform: rotateY(180deg);
+  }
+
+  .curi-left-arm {
+    display:none;
+  }
+
+  .curi-right-arm {
+   display:none;
+ }
+
+}
+
+.right {
+
+  .curi-wheels {
+    background-image: asset-url('rueda-lado.png');
+    z-index:1;
+  }
+
+  .curi-body {
+    background-image: asset-url('cuerpo-der.png');
+    left: -3%;
+  }
+
+  .curi-head {
+    background-image: asset-url('head-der.png');
+    left: -5%;
+  }
+
+  .curi-left-arm {
+    display:none;
+  }
+
+  .curi-right-arm {
+   display:none;
+ }
+
+}
+
+.up {
+
+  .curi-head {
+    background-image: asset-url('cabeza-atras.png');
+  }
+
+  .curi-body {
+    background-image: asset-url('cuerpo-atras.png');
+  }
+}
+
+
+
+

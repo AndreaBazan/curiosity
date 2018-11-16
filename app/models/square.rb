@@ -3,10 +3,10 @@ class Square
   RESULT_TABLE = {
     robot:   { state: :success, appearance: '◻ ' },
     empty:   { state: :success, appearance: '◻ ' },
-    hole:    { state: :failed, appearance: '◼ ', error: { felt: 'Curiosity felt into a hole.' } },
-    oob:     { state: :failed, appearance: '○ ', error: { oob: 'Curiosity crashed into a wall.' } },
-    wall:    { state: :failed, appearance: '○ ', error: { crashed: 'Curiosity crashed into a wall.' } },
-    target:  { state: :finished, appearance: '○ ' }
+    hole:    { state: :failed, appearance: '◼ ', error: { felt: 'Oops, Curioso se cayó dentro del hoyo.' } },
+    oob:     { state: :failed, appearance: '○ ', error: { oob: 'Oops, Curioso se chocó contra la pared.' } },
+    wall:    { state: :failed, appearance: '○ ', error: { crashed: 'Oops, Curioso se chocó contra la pared.' } },
+    finish:  { state: :goal, appearance: '○ ' }
   }
 
   attr_reader :state
@@ -19,15 +19,19 @@ class Square
   end
 
   def error
-    RESULT_TABLE[@state][:error]
+    RESULT_TABLE[@state]&.fetch(:error, nil)
+  end
+
+  def goal?
+    RESULT_TABLE[@state]&.fetch(:state, nil) == :goal
   end
 
   def failure?
-    RESULT_TABLE[@state][:state] == :failed
+    RESULT_TABLE[@state]&.fetch(:state, nil) == :failed
   end
 
   def to_s
-    RESULT_TABLE[@state].fetch(:appearance, nil)
+    RESULT_TABLE[@state]&.fetch(:appearance, nil)
   end
 
   RESULT_TABLE.each do |state, _|
