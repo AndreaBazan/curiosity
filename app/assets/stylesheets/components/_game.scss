@@ -31,7 +31,7 @@ position:relative;
 
   td.finish {
     background-image: asset-url("flag.png"),asset-url("moon-surface.png");
-    background-size:100%;
+    background-size:cover;
     background-repeat:no-repeat;
   }
 }
@@ -54,8 +54,9 @@ position:relative;
 }
 
 .game-flex {
-      display: flex;
-    align-items: baseline;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
 }
 
 .game-greeting {
