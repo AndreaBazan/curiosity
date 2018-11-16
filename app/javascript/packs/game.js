@@ -216,12 +216,6 @@ var displaySuccess = function(message) {
   });
 }
 
-window.multipleMoves = multipleMoves;
-window.displayErrors = displayErrors;
-window.displaySuccess = displaySuccess;
-window.clearQueueInterface = clearQueueInterface;
-window.restartGame = restartGame;
-
 function setPiecePosition(x, y) {
   let robot = document.querySelector('.robot');
   x = x || robot.offsetLeft
@@ -233,3 +227,9 @@ function setPiecePosition(x, y) {
 
 // Initial Game State
 setPiecePosition();
+
+window.multipleMoves = multipleMoves;
+window.displayErrors = displayErrors;
+window.displaySuccess = displaySuccess;
+window.clearQueueInterface = clearQueueInterface;
+window.restartGame = restartGame;
