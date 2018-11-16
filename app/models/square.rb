@@ -3,9 +3,9 @@ class Square
   RESULT_TABLE = {
     robot:   { state: :success, appearance: '◻ ' },
     empty:   { state: :success, appearance: '◻ ' },
-    hole:    { state: :failed, appearance: '◼ ', error: { felt: 'Curiosity felt into a hole.' } },
-    oob:     { state: :failed, appearance: '○ ', error: { oob: 'Curiosity crashed into a wall.' } },
-    wall:    { state: :failed, appearance: '○ ', error: { crashed: 'Curiosity crashed into a wall.' } },
+    hole:    { state: :failed, appearance: '◼ ', error: { felt: 'Oops, Curioso se cayó dentro del hoyo.' } },
+    oob:     { state: :failed, appearance: '○ ', error: { oob: 'Oops, Curioso se chocó contra la pared.' } },
+    wall:    { state: :failed, appearance: '○ ', error: { crashed: 'Oops, Curioso se chocó contra la pared.' } },
     finish:  { state: :goal, appearance: '○ ' }
   }
 
