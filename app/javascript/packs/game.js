@@ -151,6 +151,7 @@ function getActionsFromInterface() {
 }
 
 function sendInterface() {
+  resetPiecePosition();
   const actions = getActionsFromInterface();
   actionsInput.value = JSON.stringify(actions);
   Rails.fire(actionsInput.form, 'submit');
@@ -160,13 +161,18 @@ function clearQueueInterface() {
   queueInterface.innerHTML = '';
 }
 
-function restartGame() {
-  clearQueueInterface();
-  robotPiece.style.transitionDuration = '0s';
+function resetPiecePosition() {
+  // robotPiece.style.transitionDuration = '0s';
   document.querySelector('.robot').classList.remove('robot');
   document.querySelector('td').classList.add('robot');
+  robotPiece.style.display = 'none'
   setPiecePosition(1, 1);
-  setTimeout(_ => { robotPiece.style.transitionDuration = ''}, 100);
+  setTimeout(_ => { robotPiece.style.display = 'block' }, 3);
+}
+
+function restartGame() {
+  clearQueueInterface();
+  resetPiecePosition();
 }
 
 // Buttons Listeners
@@ -213,6 +219,8 @@ var displaySuccess = function(message) {
 window.multipleMoves = multipleMoves;
 window.displayErrors = displayErrors;
 window.displaySuccess = displaySuccess;
+window.clearQueueInterface = clearQueueInterface;
+window.restartGame = restartGame;
 
 function setPiecePosition(x, y) {
   let robot = document.querySelector('.robot');
