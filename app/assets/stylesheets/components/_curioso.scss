@@ -117,74 +117,65 @@ $arm-movement: -2%;
 .left {
   .curi-wheels {
     background-image: asset-url('rueda-lado.png');
-    animation-name: wheels-idle;
-    animation-duration: 0.5s;
-    top: $wheels-position;
+    z-index:1;
   }
 
-.curi-body {
-  background-image: asset-url('cuerpo-der.png');
-  transform: rotateY(180deg);
-  animation-name: body-idle;
-  animation-duration: 0.75s;
-  top: $body-position;
-  left: -3%;
-}
+  .curi-body {
+    background-image: asset-url('cuerpo-der.png');
+    transform: rotateY(180deg);
+  }
 
-.curi-head {
-  background-image: asset-url('head-der.png');
-  transform: rotateY(180deg);
-  animation-name: head-idle;
-  animation-duration: 1s;
-  top: $head-position;
-  left: -5%;
-}
+  .curi-head {
+    background-image: asset-url('head-der.png');
+    transform: rotateY(180deg);
+  }
+
+  .curi-left-arm {
+    display:none;
+  }
+
+  .curi-right-arm {
+   display:none;
+ }
+
 }
 
 .right {
 
-.curi-wheels {
-  background-image: asset-url('rueda-lado.png');
-  animation-name: wheels-idle;
-  animation-duration: 0.5s;
-  top: $wheels-position;
+  .curi-wheels {
+    background-image: asset-url('rueda-lado.png');
+    z-index:1;
+  }
+
+  .curi-body {
+    background-image: asset-url('cuerpo-der.png');
+    left: -3%;
+  }
+
+  .curi-head {
+    background-image: asset-url('head-der.png');
+    left: -5%;
+  }
+
+  .curi-left-arm {
+    display:none;
+  }
+
+  .curi-right-arm {
+   display:none;
+ }
+
 }
 
-.curi-body {
-  background-image: asset-url('cuerpo-der.png');
-  animation-name: body-idle;
-  animation-duration: 0.75s;
-  top: $body-position;
-  left: -3%;
-}
+.back {
 
-.curi-head {
-  background-image: asset-url('head-der.png');
-  animation-name: head-idle;
-  animation-duration: 1s;
-  top: $head-position;
-  left: -5%;
-}
+  .curi-head {
+    background-image: asset-url('cabeza-atras.png');
+  }
 
-}
-
-.behind {
-
-.curi-head {
-  background-image: asset-url('head-der.png');
-  animation-name: head-idle;
-  animation-duration: 1s;
-  top: $head-position;
-  left: -5%;
-}
-
-.curi-body {
-  background-image: asset-url('head-der.png');
-  animation-name: body-idle;
-  animation-duration: 0.75s;
-  top: $body-position;
-  left: -3%;
-}
+  .curi-body {
+    background-image: asset-url('cuerpo-atras.png');
+  }
 }
 
 
