@@ -38,7 +38,6 @@ function canMove(direction) {
       return !down;
       break;
       default:
-      console.log('Something went wrong');
   }
 }
 
@@ -102,7 +101,6 @@ function moveTile(direction) {
       // Get actual row by Parent Element && nextRow && cell by CellIndex
       break;
     default:
-      console.log('Something went wrong');
   }
   setPiecePosition();
 }
@@ -220,7 +218,6 @@ function setPiecePosition(x, y) {
   let robot = document.querySelector('.robot');
   x = x || robot.offsetLeft
   y = y || robot.offsetTop
-  console.log('Set piece')
   robotPiece.style.left = x + 'px'
   robotPiece.style.top = y + 'px'
 }
