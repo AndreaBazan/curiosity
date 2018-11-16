@@ -71,6 +71,8 @@ $arm-movement: -2%;
   animation-duration: 1s;
   top: $head-position;
   left: -5%;
+  display: flex;
+  justify-content: center;
 }
 
 .curi-body {
