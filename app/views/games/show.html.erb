@@ -1,28 +1,30 @@
-<section>
-  <div class="level-container container">
-    <div class="level-game-name">
-      <h1>Primera Lección 🚀</h1>
-      <h2>🔹<%= @game.title %>🔸</h2>
-      <h4>Pensando en secuencia, orden y logicamente!! </h4>
-    </div>
-    <div class="card-container-level">
-      <div class="levels-container">
-        <div class="levels">
-         <% @game.levels.each_with_index do |level, index| %>
-         <% index += 1 %>
-         <%= link_to(play_game_level_path(@game, level)) do %>
-         <div class="level-icon">
-          <p><%= index %></p>
-        </div>
-        <% end %>
-        <% end %>
+<div class="dashboard-banner">
+  <section>
+    <div class="level-container container">
+      <div class="level-game-name">
+        <h1 class="game-info">Primera Lección </h1>
+        <h2 class="game-info"><%= @game.title %></h2>
+        <h4 class="game-info">Pensando en secuencia, orden y logicamente!! </h4>
       </div>
-      <div class="hr"><hr /></div>
+      <div class="card-container-level">
+        <div class="levels-container">
+          <div class="levels">
+           <% @game.levels.each_with_index do |level, index| %>
+           <% index += 1 %>
+           <%= link_to(play_game_level_path(@game, level)) do %>
+           <div class="level-icon">
+            <p><%= index %></p>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+        <div class="hr"><hr /></div>
+      </div>
     </div>
   </div>
+  </div>
+  </section>
 </div>
-</div>
-</section>
 
 
 <%# <div class="row overview">

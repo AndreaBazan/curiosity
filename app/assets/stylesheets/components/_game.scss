@@ -8,56 +8,35 @@ position:relative;
   border:3px solid black;
   position: relative;
   margin: 50px;
-  transform: perspective(1000px) rotate(0deg) skew(5deg) translate(0, 0);
+  transform: perspective(1000px) rotate(0deg) skew(0) translate(0, 0);
   box-shadow: -20px 20px 10px rgba(0, 0, 0, .5);
 
   td {
     position: relative;
-    background-image:asset-url("grass.png");
+    background-image:asset-url("moon-surface.png");
     background-size:100%;
   }
 
   td.hole {
-    background-image: asset-url("quicksand2.png") ,asset-url("grass.png");
+    background-image: asset-url("crater.png") ,asset-url("moon-surface.png");
     background-size:100%;
     background-repeat:no-repeat;
   }
 
   td.wall {
-    background-image: asset-url("garbage.png"),asset-url("grass.png");
+    background-image: asset-url("garbage.png"),asset-url("moon-surface.png");
     background-size:100%;
     background-repeat:no-repeat;
   }
 
   td.finish {
-    background-image: asset-url("flag.png"),asset-url("grass.png");
+    background-image: asset-url("flag.png"),asset-url("moon-surface.png");
     background-size:100%;
     background-repeat:no-repeat;
   }
 }
 
-.game-box:after {
-  content:'';
-  position:absolute;
-      bottom: -10px;
-    left: -20px;
-  height:100%;
-  width:20px;
-  background-color:#001a37;
-  transform: rotate(0deg) skewY(-45deg);
-}
 
-
-.game-box:before {
-  content:'';
-  position:absolute;
-  bottom: -22px;
-  left: -11px;
-  height:20px;
-  width:100%;
-  background-color:#001a37;
-  transform: rotate(0deg) skewX(-45deg);
-}
 
 .robot {
   background-color: red;
@@ -79,3 +58,9 @@ position:relative;
     align-items: baseline;
 }
 
+.game-greeting {
+  margin-top: 0;
+  padding-top: 16px;
+  color:white;
+
+}
