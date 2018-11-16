@@ -1,44 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 user-greeting">
+      <div class="welcome-banner">
+        <marquee class="head-text" >Hola <%= current_user.name %>! &nbsp &nbsp &nbsp &nbsp &nbsp Listo para curiosear?  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Hola <%= current_user.name %>! &nbsp &nbsp &nbsp &nbsp &nbsp Listo para curiosear? </marquee>
+        <%= render 'components/cabeza-curioso' %>
 
-<div class="row">
-  <div class="col-sm-12 user-greeting">
-    <div class="welcome-banner">
-      <h2 class="slide-text">Hola <%= current_user.name %>!</h2>
-      <%= render 'components/cabeza-curioso' %>
-    <h5 class="text-center ">Estamos listos para curiosear?</h5>
+      </div>
     </div>
   </div>
-</div>
-<!--   <div class="row">
-    <section class=" col-sm-12 user-prices">
-      <h3 class="text-center">Tus Premios</h3>
-    </section>
-  </div> -->
 <div class="row">
-  <section class=" col-sm-7 user-games">
-    <h3 class="text-center">Juegos</h3>
+  <section class=" col-sm-12 user-games">
+    <h2 class="text-center games-header" >TUS JUEGOS</h2>
     <div class="card-container ">
       <div class="row">
-        <% @games.each do |game| %>
-          <div class="col-sm-6 col-md-4">
-            <div class='card' style= 'background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(<%=game.photo%>);background-repeat: no-repeat;' >
+          <% @games.each do |game| %>
+        <div class="col-sm-6 col-md-4">
+          <div class="flip">
+            <div class='card front' style= 'background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(<%=game.photo%>);background-repeat: no-repeat;' >
               <div class="card-description">
-                <h3 class="card-title"><%= game.title %></h3>
-                <div class="card-play">
-                 <%= link_to game_path(game), :class=>"card-btn" do%>
-                 <i class="fa fa-play btn-play"></i>
-                 <% end %>
-                </div>
-             </div>
+                <h1 class="card-title"><%= game.title %></h1>
+              </div>
            </div>
-        </div>
-     <% end %>
+           <%= link_to game_path(game), :class=>"back" do %>
+              <div class="card-play text-center">
+                <h1 >PLAY ME</h1>
+             </div>
+             <% end  %>
+         </div>
+       </div>
+         <% end %>
      </div>
-    </div>
-  </section>
-  <%# <section class="col-sm-5 user-progress">
-    <h3 class="text-center">Progreso</h3>
-  </section> %>
+   </div>
+ </div>
+</section>
+    <%# <section class="col-sm-5 user-progress">
+      <h3 class="text-center">Progreso</h3>
+    </section> %>
+  </div>
 </div>
-
-
-

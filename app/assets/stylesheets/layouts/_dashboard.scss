@@ -33,6 +33,7 @@
 }
 
 .welcome-banner{
+  height:30%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,21 +79,26 @@
    }
 }
 
-.user-progress{
-  color: $blue;
-  h3{
-    font-size: 26px;
-  }
 
-  @media (min-width: '460px') {
-     h3 {
-       font-size: 28px;
-     }
-   }
-   @media (min-width: '860px') {
-     h3 {
-       font-size: 31px;
-     }
-   }
+.card {
+  transform: rotateY(180deg);
 }
+
+// .user-progress{
+//   color: $blue;
+//   h3{
+//     font-size: 26px;
+//   }
+
+//   @media (min-width: '460px') {
+//      h3 {
+//        font-size: 28px;
+//      }
+//    }
+//    @media (min-width: '860px') {
+//      h3 {
+//        font-size: 31px;
+//      }
+//    }
+// }
 
