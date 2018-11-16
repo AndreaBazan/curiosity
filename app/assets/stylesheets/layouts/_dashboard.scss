@@ -43,6 +43,7 @@
 .dashboard-banner {
   background-image: asset-url('space.png');
   background-size:cover;
+  min-height: calc(100vh - 100px);
 }
 
 .games-header {

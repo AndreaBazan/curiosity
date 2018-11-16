@@ -54,8 +54,9 @@ position:relative;
 }
 
 .game-flex {
-      display: flex;
-    align-items: baseline;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
 }
 
 .game-greeting {

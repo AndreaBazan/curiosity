@@ -1,5 +1,3 @@
-
-
 <div class="dashboard-banner">
   <h1 class="game-greeting text-center"><%= @level.game.title %></h1>
   <div class="game-flex">
@@ -109,7 +107,7 @@
   </div>
 
   <%= form_for [@level, @play_session], remote: true do |form| %>
-  <%= form.hidden_field :actions %>
+    <%= form.hidden_field :actions %>
   <% end %>
 
   <% content_for :js_pack do %>
