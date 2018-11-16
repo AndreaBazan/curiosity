@@ -40,7 +40,14 @@
   justify-content: space-around;
 }
 
+.dashboard-banner {
+  background-image: asset-url('space.png');
+  background-size:cover;
+}
 
+.games-header {
+  color:white;
+}
 // .user-prices {
 //   color: $blue;
 //   height:20vh;

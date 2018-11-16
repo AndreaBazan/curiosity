@@ -19,15 +19,18 @@
   width: 210px;
   border-radius: 50%;
   position: absolute;
-  z-index: -99;
 }
 
 .head-text {
-   position: absolute;
-  top: 42%;
-  color:white;
-  font-size:30px;
+  position: absolute;
+  top: 27%;
+  color: white;
+  font-size: 64px;
   font-weight: bold;
+  font-family: 'Codystar', sans-serif !important;
+  border-radius: 0 0 44% 45%;
+  letter-spacing: -2px;
+  font-weight: 400;
 }
 
 // .slide-text{
