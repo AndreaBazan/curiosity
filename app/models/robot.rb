@@ -8,6 +8,7 @@ class Robot
     @facing    = attr[:facing]    || :south
     @errors    = attr[:errors]    || {}
     @movements = attr[:movements] || []
+    @success   = false
   end
 
   def move(executions = 1)
@@ -50,6 +51,14 @@ class Robot
       send(action.type, action.executions)
     end
     self
+  end
+
+  def has_errors?
+    errors.any?
+  end
+
+  def successful?
+    !errors.any? && @success
   end
 
   private
