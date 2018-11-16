@@ -115,6 +115,10 @@ $arm-movement: -2%;
 }
 
 .left {
+  .curi {
+    transform: perspective(350px) rotate(0deg) skew(-10deg) translate(2%, -56%) scale(0.88);
+  }
+
   .curi-wheels {
     background-image: asset-url('rueda-lado.png');
     z-index:1;
@@ -141,6 +145,9 @@ $arm-movement: -2%;
 }
 
 .right {
+  .curi {
+    transform: perspective(350px) rotate(0deg) skew(-10deg) translate(2%, -56%) scale(0.88);
+  }
 
   .curi-wheels {
     background-image: asset-url('rueda-lado.png');
