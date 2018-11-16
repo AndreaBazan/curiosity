@@ -108,10 +108,6 @@ function moveTile(direction) {
 
 let playerMoves = [];
 
-const queueInterfaceElement = (type, executions) => `
-  <li data-type="${type}" data-executions="${executions}">${type} ${executions}</li>
-`
-
 function actionText(direction) {
   switch (direction) {
     case 'left':
@@ -125,12 +121,16 @@ function actionText(direction) {
   }
 }
 
+const queueInterfaceElement = (type, executions) => `
+  <li data-type="${type}" data-executions="${executions}">${actionText(type)} ${executions}</li>
+`  
+
 // Button Actions
 function addMovesToQueueInterface() {
   const inputID = this.getAttribute('data-input');
   const times = document.getElementById(inputID).value;
   const direction = this.id;
-  queueInterface.insertAdjacentHTML('beforeend', queueInterfaceElement(actionText(direction), times))
+  queueInterface.insertAdjacentHTML('beforeend', queueInterfaceElement(direction, times))
 }
 
 function playQueueInterface() {
