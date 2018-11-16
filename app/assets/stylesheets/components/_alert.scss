@@ -1,7 +1,9 @@
 .alert {
-  margin: 0;
+  z-index: 9999;
+  position: fixed;
   text-align: center;
   font-size: 10px;
+  width: 100%;
   // color: white;
 }
 // .alert-info {

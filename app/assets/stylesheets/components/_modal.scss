@@ -1,0 +1,11 @@
+.modal-content{
+  background-image: asset-url("space.png");
+  text-align: center;
+  .modal-title{
+    color: #fff;
+  }
+  .modal-header, .modal-footer {
+    border: none;
+  }
+  opacity: 0.95;
+}
