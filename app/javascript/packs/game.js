@@ -190,8 +190,19 @@ var displayErrors = function(errors) {
   });
 }
 
+var displaySuccess = function(message) {
+  const delay = 1000;
+  return new Promise(function(resolve) {
+    alert(message);
+    setTimeout( _ => {
+      resolve(window);
+    }, delay);
+  });
+}
+
 window.multipleMoves = multipleMoves;
 window.displayErrors = displayErrors;
+window.displaySuccess = displaySuccess;
 
 function setPiecePosition() {
   console.log('Set piece')

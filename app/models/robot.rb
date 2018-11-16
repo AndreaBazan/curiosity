@@ -14,7 +14,7 @@ class Robot
   def move(executions = 1)
     succesful_moves_count = 0
     executions.times do
-      break if errors.any?
+      break if game_over?
 
       execute_move
       succesful_moves_count += 1
@@ -57,6 +57,10 @@ class Robot
     errors.any?
   end
 
+  def game_over?
+    errors.any? || @success
+  end
+
   def successful?
     !errors.any? && @success
   end
@@ -73,10 +77,11 @@ class Robot
     move_to(@facing)
     square = @board.square_at(@position)
     errors.merge!(square.error) if square.failure?
+    @success = true if square.goal?
   end
 
   def turn(side)
-    return if errors.any?
+    return if game_over?
 
     operator = { left: -1, right: 1 }
     current_facing_index = FACINGS.index(@facing)
