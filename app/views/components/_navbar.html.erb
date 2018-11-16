@@ -9,7 +9,9 @@
 
     <% if user_signed_in? %>
       <!-- Links when logged in -->
-      <%= link_to "Perfil", user_root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <button type="button" class= "btn btn-primary play-btn">
+        <%= link_to "Juega!", user_root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      </button>
       <%# <%= link_to "List a dress", new_dress_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%# <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%# <%= render 'shared/search' %>
@@ -35,7 +37,6 @@
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Inicia sesión"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_up", default: "Crea una cuenta"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
