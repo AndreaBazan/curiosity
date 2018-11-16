@@ -194,10 +194,14 @@ var multipleMoves = function(direction, times) {
   });
 }
 
+function displayModalFor(status) {
+  window.$(`#${status}Modal`).modal();
+}
+
 var displayErrors = function(errors) {
   const delay = 700;
   return new Promise(function(resolve) {
-    alert(errors);
+    displayModalFor(errors)
     setTimeout( _ => {
       resolve(window);
     }, delay);
@@ -207,7 +211,7 @@ var displayErrors = function(errors) {
 var displaySuccess = function(message) {
   const delay = 700;
   return new Promise(function(resolve) {
-    alert(message);
+    displayModalFor('contrats')
     setTimeout( _ => {
       resolve(window);
     }, delay);
