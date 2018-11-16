@@ -37,51 +37,49 @@ games_attributes = [
 ]
 Game.create!(games_attributes)
 
+r = 'robot'
+_ = 'empty'
+w = 'wall'
+o = 'hole'
+f = 'finish'
 
 boards = [
   [
-    %w[robot empty finish wall wall empty],
-    %w[hole empty empty empty empty empty],
-    %w[empty empty empty empty empty empty],
-    %w[empty empty empty empty hole empty],
-    %w[wall empty empty wall empty empty],
-    %w[empty empty empty empty hole empty]
+    [r, o, f],
+    [_, o, _],
+    [_, _, _],
   ],
   [
-    %w[robot empty empty wall wall empty],
-    %w[hole hole empty empty empty empty],
-    %w[empty empty empty empty empty empty],
-    %w[empty empty empty empty hole empty],
-    %w[wall empty empty wall empty empty],
-    %w[empty empty empty empty hole empty]
+    [r, _, _, _],
+    [w, _, w, o],
+    [_, _, _, _],
+    [_, w, o, f],
   ],
   [
-    %w[robot empty empty wall wall empty],
-    %w[hole hole empty empty empty empty],
-    %w[empty empty empty empty empty empty],
-    %w[empty empty empty empty hole empty],
-    %w[wall empty empty wall empty empty],
-    %w[empty empty empty empty hole empty]
+    [r, _, _, _, _],
+    [w, w, w, w, _],
+    [_, _, _, _, _],
+    [_, o, o, o, o],
+    [_, _, _, _, f],
   ],
   [
-    %w[robot empty empty wall wall empty],
-    %w[hole hole empty empty empty empty],
-    %w[empty empty empty empty empty empty],
-    %w[empty empty empty empty hole empty],
-    %w[wall empty empty wall empty empty],
-    %w[empty empty empty empty hole empty]
+    [r, _, _, _, _, _],
+    [_, _, _, _, _, _],
+    [_, _, _, _, _, _],
+    [_, _, _, _, _, _],
+    [_, _, _, _, _, _],
+    [_, _, _, _, _, _],
   ],
   [
-    %w[robot empty empty wall wall empty],
-    %w[hole hole empty empty empty empty],
-    %w[empty empty empty empty empty empty],
-    %w[empty empty empty empty hole empty],
-    %w[wall empty empty wall empty empty],
-    %w[empty empty empty empty hole empty]
+    [r, _, _, _, _, _, _],
+    [_, _, _, _, _, _, _],
+    [_, _, _, _, _, _, _],
+    [_, _, _, _, _, _, _],
+    [_, _, _, _, _, _, _],
+    [_, _, _, _, _, _, _],
+    [_, _, _, _, _, _, _],
   ],
 ]
-
-
 
 puts 'Creating levels...'
 Game.all.each do |game|
